@@ -4,4 +4,3 @@
 - Valentino Miotto
 - Manuel Doiny
 - Lucas Garcia
-- Hola
