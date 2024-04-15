@@ -6,7 +6,7 @@ const productcontroller = require("../controllers/productcontroller");
 /* GET home page. */
 
 router.get("/", productcontroller.index)
-router.get("/id/:id", productcontroller.id)
+router.get("/:id", productcontroller.id)
 
 
 

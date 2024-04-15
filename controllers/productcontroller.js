@@ -4,7 +4,14 @@ const controller = {
     res.render("index", { 'datos': datos });
   },
   id: function (req, res) {
-    res.render("product", { 'id': req.params.id });
+
+
+
+
+
+
+    
+    res.render("product", { 'id': req.params.id, 'datos': datos });
   }
   };
   
