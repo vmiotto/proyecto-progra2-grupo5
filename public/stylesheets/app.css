@@ -27,9 +27,9 @@ body {
 }
 
 body {
-  font-family: var(--base-font-family);
+  font-family:Arial, Helvetica, sans-serif;
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color:#121111;
 }
 
 ul,
@@ -68,9 +68,19 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: rgb(98, 8, 8)
+  background-color: rgb(142, 16, 16)
 }
+.titulo{
+  font-family: 'Times New Roman', Times, serif;
+  color: goldenrod;
+  margin-top: -10px;
+}
+.logo{
+  height: auto;
+  width: 220px;
+  margin-left: -55px;
 
+}
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
@@ -113,7 +123,7 @@ hr {
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
   background-color: var(--dark-blue);
-  color: #ffffff;
+  color: #272424;
   font-size: 1.5em;
   border: none;
   border-radius: 4px;
@@ -175,11 +185,12 @@ hr {
 }
 
 .product-box {
-  background-color: #ffffff;
+  background-color: #272424;
   border-radius: 5px;
   overflow: hidden;
   transition: 300ms;
   margin: 20px 0;
+  color: #b8b8b8;
 }
 
 .product-box a {
@@ -214,7 +225,7 @@ hr {
 .product-box_data p {
   font-size: 1.5em;
   width: 100%;
-  color: var(--gray);
+  color: #b5b4b4;
   margin: 0;
   height: 0;
   transition: 300ms;
@@ -259,7 +270,7 @@ hr {
 
 /*====== Footer ======*/
 .main-footer {
-  background-color: #ffffff;
+  background-color: rgb(142, 16, 16);
   padding: 20px 0;
   margin-top: 80px;
 }
@@ -274,20 +285,20 @@ hr {
 }
 
 .footer-data h2 {
-  color: var(--gray);
+  color:#121111;
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: var(--gray);
+  color: #121111;
   font-size: 1.5em;
   font-weight: 300;
 }
 
 .sub-footer {
   border-top: 1px solid var(--light-gray);
-  background-color: #ffffff;
+  background-color: rgb(98, 8, 8);
 }
 
 .sub-footer p {
@@ -299,15 +310,22 @@ hr {
 
 /*====== Product Detail ======*/
 .product-detail {
-  background-color: #ffffff;
+  background-color: #dfdcdc;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.products-title{
+  color: #c8c7c7;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 460%;
 }
 
 .product-detail-img {
   width: 70%;
   display: block;
   margin: auto;
+  border: 1px solid black; 
 }
 
 .product-detail-info {
@@ -323,7 +341,8 @@ hr {
 
 .product-detail-description {
   padding: 15px 15px 15px 40px;
-  font-size: 1.8em;
+  font-size: 1.9em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 1.5;
 }
 
@@ -402,7 +421,7 @@ hr {
 .comments article{
   margin-bottom: 7.5px;
   padding-bottom: 7.5px;
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid #050505;
   display: flex;
   justify-content: space-between;
 }
@@ -418,6 +437,7 @@ hr {
 .comments p{
   font-size: 1.5em;
   margin-top: 0;
+
 }
 .comments .user{
   font-size: 1.7em;
