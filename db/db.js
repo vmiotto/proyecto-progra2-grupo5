@@ -1,4 +1,15 @@
+const usuario = [
+    {
+        email:"pedrolopez@gmail.com",
+        usuario:"Pedrolopez" ,
+        contrasena: "pedritolopez1234" ,
+        nacimiento: "18/5/1998",
+        dni: "28957436" ,
+        fotoperfil: "",
 
+    },
+
+]
 const datos = [
     {
         id: 1,
@@ -208,3 +219,4 @@ const datos = [
     ]
     
     module.exports = datos
+    module.exports = usuario
