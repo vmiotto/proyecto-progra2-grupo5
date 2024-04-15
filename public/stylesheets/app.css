@@ -68,7 +68,7 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: var(--yellow);
+  background-color: rgb(98, 8, 8)
 }
 
 .main-header_home-link,
@@ -154,7 +154,7 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/imagenes/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
