@@ -448,6 +448,12 @@ hr {
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
+  color: white;
+}
+.forms{
+  color: rgb(204, 203, 203);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
 }
 
 .form-input {
@@ -460,6 +466,7 @@ hr {
   border: none;
   border: solid 1px var(--gray);
   padding: 0 15px;
+  color: white;
 }
 
 .error{
