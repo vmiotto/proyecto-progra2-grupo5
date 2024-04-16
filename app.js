@@ -8,7 +8,7 @@ const indexRouter = require("./routes/index");
 
 //Include your routes here
 const loginrouter= require("./routes/login");
-const searchrouter= require("./routes/search");
+const searchrouter= require("./routes/search-results");
 const registerrouter= require("./routes/register");
 const profilerouter= require("./routes/profile");
 const productrouter= require("./routes/product");
@@ -30,7 +30,7 @@ app.use("/", indexRouter);
 
 // Use your routes here
 app.use("/login", loginrouter);
-app.use("/search", searchrouter);
+app.use("/search-results", searchrouter);
 app.use("/register", registerrouter);
 app.use("/profile", profilerouter);
 app.use("/product", productrouter);

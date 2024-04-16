@@ -4,13 +4,83 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Resultados de búsqueda</h2>
+				<h2 class="products-title">Tus resultados para: "Mercedes-Benz Clase S"</h2>
 			</div>
+			<% for (let i = 0; i < 1; i++) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/<%= datos[i].id %>">
+							<figure class="product-box_image">
+								<img src= " <%=datos[i].foto %>" alt="<%=datos[i].nombre%>">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= datos[i].nombre %></h2>
+								<p><%= datos[i].descripcion %></p>
+								<p>Comentarios: <%= datos[i].comentarios.length %></p>
+							</article>
+						</a>
+					</section>
+				</div>
+			<% } %>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
 			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
 			////////////////
 			</h2>
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Novedades</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<% for (let i = 1; i < datos.length; i++) { %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="/product/<%= datos[i].id %>">
+									<figure class="product-box_image">
+										<img src= " <%=datos[i].foto %>" alt="<%=datos[i].nombre%>">
+									</figure>
+									<article class="product-box_data">
+										<h2><%= datos[i].nombre %></h2>
+										<p><%= datos[i].descripcion %></p>
+										<p>Comentarios: <%= datos[i].comentarios.length %></p>
+									</article>
+								</a>
+							</section>
+						</div>
+					<% } %>
+		
+			<!-- /Novedades -->
+			<!-- Más comentados -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Más comentados</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<% for (let i = 0; i < datos.length; i++) { %>
+						<% if (datos[i].comentarios.length > 2) { %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="product.html">
+									<figure class="product-box_image">
+										<img src= " <%=datos[i].foto %>" alt="<%=datos[i].nombre%>">
+									</figure>
+									<article class="product-box_data">
+										<h2><%= datos[i].nombre %></h2>
+										<p><%= datos[i].descripcion %></p>
+										<p>Comentarios: <%= datos[i].comentarios.length %></p>
+									</article>
+								</a>
+							</section>
+						</div>
+						<% } %>
+		
+					<% } %>
+		
+				</div>
+			</div>
+				
 
 
 			<%- include('./partials/footer.ejs') %>
