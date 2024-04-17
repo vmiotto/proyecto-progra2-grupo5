@@ -6,7 +6,7 @@ const profilecontroller = require("../controllers/profilecontroller");
 /* GET home page. */
 
 router.get("/", profilecontroller.index)
-router.get("/", profilecontroller.perfil)
+router.get("/profile", profilecontroller.perfil)
 
 
 

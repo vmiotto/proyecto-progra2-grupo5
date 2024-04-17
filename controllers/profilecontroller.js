@@ -4,7 +4,7 @@ const controller = {
       res.render("profile", { title: "Express" });
     },
     perfil:function (req, res) {
-      res.render("profile", { 'perfil': usuario });
+      res.render('usuario', { usuario: usuario[0] })
     },
   };
   

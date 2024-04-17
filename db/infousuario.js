@@ -5,7 +5,7 @@ const usuario = [
         contrasena: "pedritolopez1234" ,
         nacimiento: "18/5/1998",
         dni: "28957436" ,
-        fotoperfil: "",
+        fotoperfil: "../imagenes/foto-perfil.jpeg",
 
     },
 
