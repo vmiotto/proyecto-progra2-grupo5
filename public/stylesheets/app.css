@@ -81,6 +81,9 @@ hr {
   margin-left: -55px;
 
 }
+.main-navbar{
+  color: rgb(206, 206, 206);
+}
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
@@ -90,6 +93,7 @@ hr {
   font-size: 1.5em;
   margin-top: 20px;
   text-align: center;
+  color: rgb(204, 203, 203);
 }
 
 .search-form {
@@ -147,6 +151,7 @@ hr {
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+  color: #cfcfcf;
 }
 
 .logout:hover{
@@ -280,18 +285,18 @@ hr {
 }
 
 .footer-data i {
-  color: var(--light-blue);
+  color:#e49898;
   font-size: 3.5em;
 }
 
 .footer-data h2 {
-  color:#121111;
+  color:#c9c7c7;
   font-size: 2.4em;
   font-weight: 400;
 }
 
 .footer-data p {
-  color: #121111;
+  color: #b4b4b4;
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -451,10 +456,18 @@ hr {
   color: white;
 }
 .forms{
-  color: rgb(204, 203, 203);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 17px;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #b61e1e;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+
 }
+
+
 
 .form-input {
   display: block;
