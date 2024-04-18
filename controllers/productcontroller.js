@@ -5,14 +5,9 @@ const controller = {
   },
   id: function (req, res) {
 
-
-
-
-
-
     
     res.render("product", { 'id': req.params.id, 'datos': datos });
-  }
+  },
   };
   
   module.exports = controller;
