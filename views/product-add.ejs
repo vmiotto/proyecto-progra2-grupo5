@@ -7,10 +7,10 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form action="/profile" method="post" enctype="multipart/form-data">
+				<form class="agregarproducto" action="/profile" method="post" enctype="multipart/form-data">
 					<div>
 						<label for="imagen">Imagen:</label>
-						<input type="file" id="imagen" name="imagen" accept="image/*">
+						<input type="file" id="imagen" name="imagen" accept="image/*" >
 					</div>
 					<div>
 						<label for="nombre_producto">Nombre del Producto:</label>
@@ -18,7 +18,7 @@
 					</div>
 					<div>
 						<label for="descripcion">Descripción:</label>
-						<textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea>
+						<textarea id="descripcion" name="descripcion" rows="4" cols="50" style="resize: none;"></textarea>
 					</div>
 					<div>
 						<input type="submit" value="Enviar">

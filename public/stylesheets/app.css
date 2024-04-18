@@ -517,6 +517,35 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
+.agregarproducto {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.agregarproducto div {
+  margin-bottom: 15px;
+}
+
+.agregarproducto label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+
+
+.agregarproducto input[type="submit"] {
+  background-color: #af4c4c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 
 
 /*====== Media-Queries ======*/
