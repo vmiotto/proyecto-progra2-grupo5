@@ -29,7 +29,9 @@ body {
 body {
   font-family:Arial, Helvetica, sans-serif;
   font-weight: 300;
-  background-color:#121111;
+  background-image:url("../imagenes/fondo.jpg");
+  background-size: contain;
+
 }
 
 ul,
@@ -479,7 +481,7 @@ hr {
   border: none;
   border: solid 1px var(--gray);
   padding: 0 15px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .error{
@@ -492,6 +494,7 @@ textarea.form-input {
   resize: vertical;
   padding: 15px;
 }
+
 
 /*====== Profile ======*/
 .info-usuario{
