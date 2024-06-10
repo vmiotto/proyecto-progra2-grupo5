@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 10-06-2024 a las 20:11:43
+-- Tiempo de generación: 10-06-2024 a las 20:50:02
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyectoIntegrador`
 --
+CREATE DATABASE IF NOT EXISTS `proyectoIntegrador` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `proyectoIntegrador`;
 
 -- --------------------------------------------------------
 
@@ -32,8 +34,8 @@ CREATE TABLE `comentarios` (
   `producto_id` int(10) UNSIGNED DEFAULT NULL,
   `usuario_id` int(10) UNSIGNED DEFAULT NULL,
   `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,7 +43,7 @@ CREATE TABLE `comentarios` (
 -- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`, `updated_at`, `created_at`, `deleted_at`) VALUES
 ('¡Qué impresionante diseño tiene este auto!', 1, 1, 1, NULL, NULL, NULL),
 ('Realmente me encanta el interior de este Mercedes.', 1, 2, 2, NULL, NULL, NULL),
 ('El rendimiento de este auto es excepcional.', 1, 3, 3, NULL, NULL, NULL),
