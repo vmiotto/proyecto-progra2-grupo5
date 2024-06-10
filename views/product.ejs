@@ -1,12 +1,12 @@
 <%- include('partials/header.ejs') %>
 
 <!-- product detail -->
-<% for (let i=0; i < datos.length; i++) { %>
-    <% if (datos[i].id == id) { %>
+<% for (let i=0; i < productos.length; i++) { %>
+    <% if (productos[i].id == id) { %>
         <div class="container products-wrapper">
             <div class="d-flex align-items-center">
                 <h2 class="products-title">
-                    <%= datos[i].nombre %>
+                    <%= productos[i].nombre %>
                 </h2>
                 <p class="product-detail-description">
                     <a href="">Editar</a>
@@ -15,21 +15,21 @@
             <div class="product-detail">
                 <div class="row">
                     <article class="col-12 col-lg-8 product-detail-info">
-                        <img src="<%=datos[i].foto %>" alt="" class="product-detail-img">
+                        <img src="<%=productos[i].foto %>" alt="" class="product-detail-img">
                         <p class="product-detail-description">
-                            <%= datos[i].descripcion %>
+                            <%= productos[i].descripcion %>
                         </p>
                     </article>
                     <div class="col-12 col-lg-4">
-                        <% for (let r=0; r < datos[i].comentarios.length; r++) { %>
+                        <% for (let r=0; r < productos[i].comentarios.length; r++) { %>
                             <section class="comments">
                                 <article>
-                                    <img src="<%=datos[i].comentarios[r].perfil %>" alt="">
-                                    <% if (datos[i].comentarios[r].usuario !== undefined) { %>
+                                    <img src="<%=productos[i].comentarios[r].perfil %>" alt="">
+                                    <% if (productos[i].comentarios[r].usuario !== undefined) { %>
                                         <div class="data">
                                             <p class="user">
-                                                <strong> <a href="/profile"> <%= datos[i].comentarios[r].usuario %></a> </strong>
-                                                <%= datos[i].comentarios[r].texto %>
+                                                <strong> <a href="/profile"> <%= productos[i].comentarios[r].usuario %></a> </strong>
+                                                <%= productos[i].comentarios[r].texto %>
                                             </p>
                                         </div>
                                     <% } %>

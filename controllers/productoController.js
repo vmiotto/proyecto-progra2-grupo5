@@ -3,11 +3,11 @@ const producto = db.Producto
 const controller = {
   index: function (req, res) {
       producto.findAll(
-        //{
-        //include: [
-          //{ association: 'usuarios' },
-          //{ association: 'comentarios' }
-        //]}
+        {
+        include: [
+          { association: 'usuarios' },
+          { association: 'comentarios' }
+        ]}
         )
     .then(function(data){
         console.log(data)
@@ -18,7 +18,7 @@ const controller = {
     });
   },
   id: function (req, res) {
-    res.render("product", { 'id': req.params.id, 'datos': datos });
+    res.render("product", { 'id': req.params.id, productos: producto });
   },
   };
   
