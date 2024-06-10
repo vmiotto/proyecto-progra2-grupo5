@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 10-06-2024 a las 20:50:02
+-- Tiempo de generación: 10-06-2024 a las 21:00:33
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -85,7 +85,7 @@ CREATE TABLE `productos` (
   `id` int(10) UNSIGNED NOT NULL,
   `usuario_id` int(10) UNSIGNED DEFAULT NULL,
   `imagen` varchar(100) DEFAULT NULL,
-  `nombreProducto` varchar(50) NOT NULL,
+  `nombre_producto` varchar(50) NOT NULL,
   `descripcion` varchar(1000) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -96,7 +96,7 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombreProducto`, `descripcion`, `created_at`, `updated_at`, `deleted_at`) VALUES
+INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombre_producto`, `descripcion`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 'mercedes.jpg', 'Mercedes-Benz Clase S', 'El Mercedes-Benz Clase S es una obra maestra de la ingeniería automotriz que encarna el lujo en cada detalle. Con un diseño elegante y sofisticado, este sedán de alta gama ofrece un interior meticulosamente diseñado con materiales de primera calidad y tecnología de vanguardia que redefine la experiencia de conducción. Desde su suave y potente motor hasta sus innovadoras características de seguridad y confort, el Clase S es simplemente sublime en todos los sentidos.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (2, 2, 'audi.jpg', 'Audi A8', 'El Audi A8 es el epítome de la elegancia y el rendimiento refinado. Con su distintivo diseño exterior y una cabina lujosamente equipada, este sedán de lujo combina un estilo imponente con una experiencia de conducción excepcional. Cada detalle, desde los asientos de cuero premium hasta los avanzados sistemas de asistencia al conductor, refleja la artesanía y la atención al detalle que caracteriza a la marca Audi.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (3, 3, 'bmw.jpg', 'BMW Serie 7', 'El BMW Serie 7 es un símbolo de lujo y confort incomparables. Diseñado para aquellos que exigen lo mejor, este sedán de alta gama ofrece un equilibrio perfecto entre rendimiento dinámico y elegancia refinada. Con su potente motor, tecnología de última generación y un interior exquisitamente diseñado, el Serie 7 redefine el estándar de excelencia en el segmento de sedanes de lujo.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),

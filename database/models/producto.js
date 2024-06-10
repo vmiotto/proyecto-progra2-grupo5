@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         imagen: {
             type: DataTypes.STRING
         },
-        nombreProducto: {
+        nombre_producto: {
             type: DataTypes.STRING
         },
         descripcion: {
@@ -30,7 +30,7 @@ module.exports = function(sequelize, DataTypes) {
             foreignKey: "usuario_id"
         })
         Producto.hasMany(models.Comentario, {
-            as: "productos",
+            as: "comentarios",
             foreignKey: "producto_id"
         })
     }
