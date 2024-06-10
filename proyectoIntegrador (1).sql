@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 18-04-2024 a las 14:37:17
+-- Tiempo de generación: 10-06-2024 a las 20:11:43
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `proyectoIntegrador`
 --
-CREATE DATABASE IF NOT EXISTS `proyectoIntegrador` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `proyectoIntegrador`;
 
 -- --------------------------------------------------------
 
@@ -29,49 +27,51 @@ USE `proyectoIntegrador`;
 -- Estructura de tabla para la tabla `comentarios`
 --
 
-DROP TABLE IF EXISTS `comentarios`;
 CREATE TABLE `comentarios` (
   `comentario` varchar(100) DEFAULT NULL,
   `producto_id` int(10) UNSIGNED DEFAULT NULL,
   `usuario_id` int(10) UNSIGNED DEFAULT NULL,
-  `id` int(10) UNSIGNED NOT NULL
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `comentarios`
 --
 
-INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`) VALUES
-('¡Qué impresionante diseño tiene este auto!', 1, 1, 1),
-('Realmente me encanta el interior de este Mercedes.', 1, 2, 2),
-('El rendimiento de este auto es excepcional.', 1, 3, 3),
-('El Audi A8 es una obra maestra de la ingeniería.', 2, 1, 4),
-('¡El sistema de sonido en este Audi es increíble!', 2, 2, 5),
-('Me siento muy seguro conduciendo un Audi.', 2, 3, 6),
-('El BMW Serie 7 tiene una elegancia imponente.', 3, 1, 7),
-('¡El BMW Serie 7 es una belleza en la carretera!', 3, 2, 8),
-('Un sueño hecho realidad conducir este BMW.', 3, 3, 9),
-('El McLaren 720S redefine la velocidad.', 4, 1, 10),
-('La aerodinámica de este McLaren es asombrosa.', 4, 2, 11),
-('¡El McLaren 720S es una máquina de carreras en la calle!', 4, 3, 12),
-('¡El Rolls-Royce Cullinan es simplemente sublime!', 5, 1, 13),
-('¡Me siento como la realeza conduciendo este Rolls-Royce!', 5, 2, 14),
-('El lujo de este Rolls-Royce es insuperable.', 5, 3, 15),
-('El Bentley Flying Spur es una combinación de lujo y potencia.', 6, 1, 16),
-('¡Cada detalle en este Bentley es excepcional!', 6, 2, 17),
-('Me siento como un VIP conduciendo este Bentley.', 6, 3, 18),
-('¡El Bugatti Divo es el pináculo de la ingeniería automotriz!', 7, 1, 19),
-('¡El Bugatti Divo es una obra maestra en movimiento!', 7, 2, 20),
-('No hay palabras para describir la belleza de este Bugatti.', 7, 3, 21),
-('El Porsche 911 Turbo S es el sueño de todo entusiasta.', 8, 1, 22),
-('¡La potencia del Porsche 911 Turbo S es impresionante!', 8, 2, 23),
-('¡El sonido del motor del Porsche 911 Turbo S es música para mis oídos!', 8, 3, 24),
-('El Aston Martin DB11 es simplemente deslumbrante.', 9, 1, 25),
-('¡Cada curva en el Aston Martin DB11 es perfecta!', 9, 2, 26),
-('Conducir un Aston Martin es una experiencia incomparable.', 9, 3, 27),
-('El Lexus LC 500 combina lujo y rendimiento a la perfección.', 10, 1, 28),
-('El diseño del Lexus LC 500 es futurista y elegante.', 10, 2, 29),
-('Me siento como en una película de ciencia ficción conduciendo este Lexus.', 10, 3, 30);
+INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`, `created_at`, `updated_at`, `deleted_at`) VALUES
+('¡Qué impresionante diseño tiene este auto!', 1, 1, 1, NULL, NULL, NULL),
+('Realmente me encanta el interior de este Mercedes.', 1, 2, 2, NULL, NULL, NULL),
+('El rendimiento de este auto es excepcional.', 1, 3, 3, NULL, NULL, NULL),
+('El Audi A8 es una obra maestra de la ingeniería.', 2, 1, 4, NULL, NULL, NULL),
+('¡El sistema de sonido en este Audi es increíble!', 2, 2, 5, NULL, NULL, NULL),
+('Me siento muy seguro conduciendo un Audi.', 2, 3, 6, NULL, NULL, NULL),
+('El BMW Serie 7 tiene una elegancia imponente.', 3, 1, 7, NULL, NULL, NULL),
+('¡El BMW Serie 7 es una belleza en la carretera!', 3, 2, 8, NULL, NULL, NULL),
+('Un sueño hecho realidad conducir este BMW.', 3, 3, 9, NULL, NULL, NULL),
+('El McLaren 720S redefine la velocidad.', 4, 1, 10, NULL, NULL, NULL),
+('La aerodinámica de este McLaren es asombrosa.', 4, 2, 11, NULL, NULL, NULL),
+('¡El McLaren 720S es una máquina de carreras en la calle!', 4, 3, 12, NULL, NULL, NULL),
+('¡El Rolls-Royce Cullinan es simplemente sublime!', 5, 1, 13, NULL, NULL, NULL),
+('¡Me siento como la realeza conduciendo este Rolls-Royce!', 5, 2, 14, NULL, NULL, NULL),
+('El lujo de este Rolls-Royce es insuperable.', 5, 3, 15, NULL, NULL, NULL),
+('El Bentley Flying Spur es una combinación de lujo y potencia.', 6, 1, 16, NULL, NULL, NULL),
+('¡Cada detalle en este Bentley es excepcional!', 6, 2, 17, NULL, NULL, NULL),
+('Me siento como un VIP conduciendo este Bentley.', 6, 3, 18, NULL, NULL, NULL),
+('¡El Bugatti Divo es el pináculo de la ingeniería automotriz!', 7, 1, 19, NULL, NULL, NULL),
+('¡El Bugatti Divo es una obra maestra en movimiento!', 7, 2, 20, NULL, NULL, NULL),
+('No hay palabras para describir la belleza de este Bugatti.', 7, 3, 21, NULL, NULL, NULL),
+('El Porsche 911 Turbo S es el sueño de todo entusiasta.', 8, 1, 22, NULL, NULL, NULL),
+('¡La potencia del Porsche 911 Turbo S es impresionante!', 8, 2, 23, NULL, NULL, NULL),
+('¡El sonido del motor del Porsche 911 Turbo S es música para mis oídos!', 8, 3, 24, NULL, NULL, NULL),
+('El Aston Martin DB11 es simplemente deslumbrante.', 9, 1, 25, NULL, NULL, NULL),
+('¡Cada curva en el Aston Martin DB11 es perfecta!', 9, 2, 26, NULL, NULL, NULL),
+('Conducir un Aston Martin es una experiencia incomparable.', 9, 3, 27, NULL, NULL, NULL),
+('El Lexus LC 500 combina lujo y rendimiento a la perfección.', 10, 1, 28, NULL, NULL, NULL),
+('El diseño del Lexus LC 500 es futurista y elegante.', 10, 2, 29, NULL, NULL, NULL),
+('Me siento como en una película de ciencia ficción conduciendo este Lexus.', 10, 3, 30, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -79,23 +79,22 @@ INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`) VALU
 -- Estructura de tabla para la tabla `productos`
 --
 
-DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `id` int(10) UNSIGNED NOT NULL,
   `usuario_id` int(10) UNSIGNED DEFAULT NULL,
   `imagen` varchar(100) DEFAULT NULL,
   `nombreProducto` varchar(50) NOT NULL,
   `descripcion` varchar(1000) DEFAULT NULL,
-  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deletedAt` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombreProducto`, `descripcion`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombreProducto`, `descripcion`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 'mercedes.jpg', 'Mercedes-Benz Clase S', 'El Mercedes-Benz Clase S es una obra maestra de la ingeniería automotriz que encarna el lujo en cada detalle. Con un diseño elegante y sofisticado, este sedán de alta gama ofrece un interior meticulosamente diseñado con materiales de primera calidad y tecnología de vanguardia que redefine la experiencia de conducción. Desde su suave y potente motor hasta sus innovadoras características de seguridad y confort, el Clase S es simplemente sublime en todos los sentidos.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (2, 2, 'audi.jpg', 'Audi A8', 'El Audi A8 es el epítome de la elegancia y el rendimiento refinado. Con su distintivo diseño exterior y una cabina lujosamente equipada, este sedán de lujo combina un estilo imponente con una experiencia de conducción excepcional. Cada detalle, desde los asientos de cuero premium hasta los avanzados sistemas de asistencia al conductor, refleja la artesanía y la atención al detalle que caracteriza a la marca Audi.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (3, 3, 'bmw.jpg', 'BMW Serie 7', 'El BMW Serie 7 es un símbolo de lujo y confort incomparables. Diseñado para aquellos que exigen lo mejor, este sedán de alta gama ofrece un equilibrio perfecto entre rendimiento dinámico y elegancia refinada. Con su potente motor, tecnología de última generación y un interior exquisitamente diseñado, el Serie 7 redefine el estándar de excelencia en el segmento de sedanes de lujo.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
@@ -113,7 +112,6 @@ INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombreProducto`, `descri
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(10) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -121,16 +119,16 @@ CREATE TABLE `usuarios` (
   `fecha` date DEFAULT NULL,
   `DNI` int(11) DEFAULT NULL,
   `foto` varchar(500) DEFAULT NULL,
-  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `deletedAt` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `email`, `password`, `fecha`, `DNI`, `foto`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+INSERT INTO `usuarios` (`id`, `email`, `password`, `fecha`, `DNI`, `foto`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'juan.perez@example.com', 'contraseña123', '1990-05-15', 12345678, 'ruta/foto1.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (2, 'ana.garcia@example.com', 'secreto456', '1985-10-28', 87654321, 'ruta/foto2.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (3, 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'ruta/foto3.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
