@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const productcontroller = require("../controllers/productcontroller");
+const productoController = require("../controllers/productoController");
 
 /* GET home page. */
 
-router.get("/", productcontroller.index)
-router.get("/:id", productcontroller.id)
+router.get("/", productoController.index)
+router.get("/:id", productoController.id)
 
 
 
