@@ -10,6 +10,7 @@ router.get("/register", userscontroller.register)
 router.post("/register", userscontroller.store)
 router.get("/login", userscontroller.login)
 router.post("/login", userscontroller.logged)
+router.post('/logout', userscontroller.logout);
 
 
 

@@ -3,6 +3,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+const session = require("express-session");
+
 
 const indexRouter = require("./routes/index");
 
@@ -11,6 +13,7 @@ const searchrouter= require("./routes/search-results");
 const profilerouter= require("./routes/profile");
 const productrouter= require("./routes/product");
 const usersrouter= require("./routes/users");
+const db = require("./database/models");
 
 const app = express();
 
@@ -24,6 +27,32 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(
+  session({
+    secret: "Secreto del session",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+app.use(function (req, res, next) {
+  if (req.session.usuarioLogueado !== undefined) {
+    res.locals.user = req.session.usuarioLogueado;
+  }
+  return next();
+});
+app.use(function(req, res, next){
+  if(req.session.usuarioLogueado === undefined && req.cookies.usuarioGuardado !== undefined){
+    let cookieId = req.cookies.usuarioGuardado;
+    db.Usuario.findByPk(cookieId).then(function(user){
+      req.session.user = user;
+      res.locals.user = req.session.user;     
+    }).catch(function(err){
+      console.log(err)
+    })
+  }
+  return next();
+})
 app.use("/", indexRouter);
 
 
