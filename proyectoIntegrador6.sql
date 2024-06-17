@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 10-06-2024 a las 21:00:33
+-- Tiempo de generación: 13-06-2024 a las 20:25:18
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -116,10 +116,11 @@ INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombre_producto`, `descr
 
 CREATE TABLE `usuarios` (
   `id` int(10) UNSIGNED NOT NULL,
+  `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `fecha` date DEFAULT NULL,
-  `DNI` int(11) DEFAULT NULL,
+  `dni` int(11) DEFAULT NULL,
   `foto` varchar(500) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -130,12 +131,12 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `email`, `password`, `fecha`, `DNI`, `foto`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'juan.perez@example.com', 'contraseña123', '1990-05-15', 12345678, 'ruta/foto1.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(2, 'ana.garcia@example.com', 'secreto456', '1985-10-28', 87654321, 'ruta/foto2.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(3, 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'ruta/foto3.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(4, 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'ruta/foto4.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(5, 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'ruta/foto5.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL);
+INSERT INTO `usuarios` (`id`, `username`, `email`, `password`, `fecha`, `dni`, `foto`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'juanperez', 'juan.perez@example.com', 'contraseña123', '1990-05-15', 12345678, 'ruta/foto1.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(2, 'ana.garcia', 'ana.garcia@example.com', 'secreto456', '1985-10-28', 87654321, 'ruta/foto2.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(3, 'carlitos123', 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'ruta/foto3.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(4, 'laura_mart', 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'ruta/foto4.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'ruta/foto5.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL);
 
 --
 -- Índices para tablas volcadas

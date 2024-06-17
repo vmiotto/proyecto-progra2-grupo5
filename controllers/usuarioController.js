@@ -18,7 +18,7 @@ const controller = {
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         fecha: req.body.fecha,
-        dni: req.body.DNI,
+        dni: req.body.dni,
         foto: req.body.foto,        
     };
     //creamos el usuario

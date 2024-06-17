@@ -1,12 +1,10 @@
 <%- include('partials/header.ejs') %>
 
 <!-- product detail -->
-<% for (let i=0; i < productos.length; i++) { %>
-    <% if (productos[i].id == id) { %>
         <div class="container products-wrapper">
             <div class="d-flex align-items-center">
                 <h2 class="products-title">
-                    <%= productos[i].nombre %>
+                    <%= producto.nombre_producto %>
                 </h2>
                 <p class="product-detail-description">
                     <a href="">Editar</a>
@@ -15,21 +13,21 @@
             <div class="product-detail">
                 <div class="row">
                     <article class="col-12 col-lg-8 product-detail-info">
-                        <img src="<%=productos[i].foto %>" alt="" class="product-detail-img">
+                        <img src="../imagenes/<%=producto.imagen%>" alt="" class="product-detail-img">
                         <p class="product-detail-description">
-                            <%= productos[i].descripcion %>
+                            <%= producto.descripcion %>
                         </p>
                     </article>
                     <div class="col-12 col-lg-4">
-                        <% for (let r=0; r < productos[i].comentarios.length; r++) { %>
+                        <% for (let r=0; r < producto.comentarios.length; r++) { %>
                             <section class="comments">
                                 <article>
-                                    <img src="<%=productos[i].comentarios[r].perfil %>" alt="">
-                                    <% if (productos[i].comentarios[r].usuario !== undefined) { %>
+                                    <img src="<%=producto.comentarios[r].image %>" alt="">
+                                    <% if (producto.comentarios[r].usuario_id !== undefined) { %>
                                         <div class="data">
                                             <p class="user">
-                                                <strong> <a href="/profile"> <%= productos[i].comentarios[r].usuario %></a> </strong>
-                                                <%= productos[i].comentarios[r].texto %>
+                                                <strong> <a href="/profile"> <%= usuarioComentador.email %></a> </strong>
+                                                <%= producto.comentarios[r].comentario %>
                                             </p>
                                         </div>
                                     <% } %>
@@ -46,8 +44,7 @@
                 </div>
             </div>
         </div>
-    <% } %>
-<% } %>
+    
 
 
 <%- include('partials/footer.ejs') %>
