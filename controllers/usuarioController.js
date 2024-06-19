@@ -15,14 +15,16 @@ const controller = {
       //TO DO: Validations
       const user = {
         id: req.body.id,
+        username: req.body.username,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         fecha: req.body.fecha,
         dni: req.body.dni,
         foto: req.body.foto,        
     };
+    console.log("usuario: ", JSON.stringify(user,null, 4))
     //creamos el usuario
-    usuarios
+      db.Usuario
         .create(user)
         .then(function (user) {
             return res.redirect("../users/login");
