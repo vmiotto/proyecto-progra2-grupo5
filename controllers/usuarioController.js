@@ -27,10 +27,12 @@ const controller = {
       db.Usuario
         .create(user)
         .then(function (user) {
-            return res.redirect("../users/login");
+          console.log("Usuario creado correctamente:", user);
+          return res.redirect("../users/login");
         })
         .catch(function (err) {
             console.log("Error al guardar el usuario", err);
+            return res.status(500).send("Error al guardar el usuario en la base de datos.");
         });
     },
     login: function (req, res) {    
