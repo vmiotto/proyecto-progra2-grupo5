@@ -1,22 +1,29 @@
 <%- include('./partials/header.ejs') %>
-
+	<%if (datos.length === 0){ %>
+		<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">No hay resultados para su criterio de búsqueda: "<%= busqueda %>"</h2>
+			</div>
+	<% }else { %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Tus resultados para: "Mercedes-Benz Clase S"</h2>
+				<h2 class="products-title">Tus resultados para: "<%= busqueda %>"</h2>
 			</div>
 			<% for (let i = 0; i < 1; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/product/<%= datos[i].id %>">
 							<figure class="product-box_image">
-								<img src= " <%=datos[i].foto %>" alt="<%=datos[i].nombre%>">
+								<img src= " ../imagenes/<%=datos[i].imagen %>" alt="<%=datos[i].nombre_producto%>">
 							</figure>
 							<article class="product-box_data">
-								<h2><%= datos[i].nombre %></h2>
+								<h2><%= datos[i].nombre_producto %></h2>
 								<p><%= datos[i].descripcion %></p>
 								<p>Comentarios: <%= datos[i].comentarios.length %></p>
+								<p><a href="./profile/<%=datos[i].usuario_id%>"> Publicado por <%=datos[i].usuarios.username%></a></p>
 							</article>
 						</a>
 					</section>
@@ -32,14 +39,15 @@
 					<% for (let i = 1; i < datos.length; i++) { %>
 						<div class="col-12 col-sm-6 col-lg-3">
 							<section class="product-box">
-								<a href="/product/<%= datos[i].id %>">
+								<a href="/product/<%=datos[i].id%>">
 									<figure class="product-box_image">
-										<img src= " <%=datos[i].foto %>" alt="<%=datos[i].nombre%>">
+										<img src= "../imagenes/<%=datos[i].imagen%>" alt="<%=datos[i].nombre_producto%>">
 									</figure>
 									<article class="product-box_data">
-										<h2><%= datos[i].nombre %></h2>
+										<h2><%= datos[i].nombre_producto %></h2>
 										<p><%= datos[i].descripcion %></p>
 										<p>Comentarios: <%= datos[i].comentarios.length %></p>
+										<p><a href="./profile/<%=datos[i].usuario_id%>"> Publicado por <%=datos[i].usuarios.username%></a></p>
 									</article>
 								</a>
 							</section>
@@ -60,12 +68,14 @@
 							<section class="product-box">
 								<a href="/product/<%= datos[i].id %>">
 									<figure class="product-box_image">
-										<img src= " <%=datos[i].foto %>" alt="<%=datos[i].nombre%>">
+										<img src= "../imagenes/<%=datos[i].imagen%>" alt="<%=datos[i].nombre_producto%>">
 									</figure>
 									<article class="product-box_data">
-										<h2><%= datos[i].nombre %></h2>
+										<h2><%= datos[i].nombre_producto %></h2>
 										<p><%= datos[i].descripcion %></p>
 										<p>Comentarios: <%= datos[i].comentarios.length %></p>
+										<p><a href="./profile/<%=datos[i].usuario_id%>"> Publicado por <%=datos[i].usuarios.username%></a></p>
+
 									</article>
 								</a>
 							</section>
@@ -77,6 +87,6 @@
 				</div>
 			</div>
 				
-
+<% } %>
 
 			<%- include('./partials/footer.ejs') %>
