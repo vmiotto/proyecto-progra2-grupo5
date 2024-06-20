@@ -9,7 +9,10 @@ const controller = {
           [op.or]: [
             { nombre_producto: { [op.like]: '%' + infoABuscar + '%' } },
             { descripcion: { [op.like]: '%' + infoABuscar + '%' } }
-          ]
+          ],
+          order: [
+            ['created_at', 'DESC'] 
+           ]
         },
         include: [{ association: 'comentarios'}, {association: 'usuarios'}]
       })

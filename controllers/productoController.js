@@ -7,7 +7,11 @@ const controller = {
         include: [
           { association: 'usuarios' },
           { association: 'comentarios' }
-        ]}
+        ],
+        order: [
+         ['created_at', 'DESC'] 
+        ]
+      }
         )
     .then(function(data){
         console.log(data)
