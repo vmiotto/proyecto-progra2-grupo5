@@ -13,6 +13,7 @@ const controller = {
     },
     store: function(req, res) {
       //TO DO: Validations
+      console.log('entro a register')
       const user = {
         id: req.body.id,
         username: req.body.username,
@@ -22,7 +23,7 @@ const controller = {
         dni: req.body.dni,
         foto: req.body.foto,        
     };
-    console.log("usuario: ", JSON.stringify(user,null, 4))
+    console.log("usuario: ", req.body)
     //creamos el usuario
       db.Usuario
         .create(user)
