@@ -30,6 +30,8 @@
 								<h2><%= productos[i].nombre_producto %></h2>
 								<p><%= productos[i].descripcion %></p>
 								<p>Comentarios: <%= productos[i].comentarios.length %></p>
+								<p><a href="./profile/<%=productos[i].usuario_id%>"> Publicado por <%=productos[i].usuarios.username%></a></p>
+
 							</article>
 						</a>
 					</section>
@@ -56,6 +58,8 @@
 								<h2><%= productos[i].nombre_producto %></h2>
 								<p><%= productos[i].descripcion %></p>
 								<p>Comentarios: <%= productos[i].comentarios.length %></p>
+								<p><a href="./profile/<%=productos[i].usuario_id%>"> Publicado por <%=productos[i].usuarios.username%></a></p>
+
 							</article>
 						</a>
 					</section>
