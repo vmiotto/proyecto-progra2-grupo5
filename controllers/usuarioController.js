@@ -69,7 +69,7 @@ const controller = {
         //Destruir la sessión
         req.session.destroy();
     
-        //Destruir la coockie
+        //Destruir la cookie
         res.clearCookie("userId");
     
         //redireccionar a home
