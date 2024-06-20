@@ -11,9 +11,8 @@
 			<div class="col-12">
 				<h2 class="products-title">Registrate</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
 			<h2 class="forms"> 
-				<form action="" method="POST">
+				<form action="/users/register" method="POST">
 					<label for="email">Email:</label>
 					<input type="email" id="email" name="email" value="<%= locals.old !== undefined && old.email ? old.email : "" %>"><br><br>
 					<% if (locals.errors && errors.email) { %>
@@ -21,7 +20,7 @@
 					<% } %>
 				
 					<label for="username">Usuario:</label>
-					<input type="text" id="username" name="username" ><br><br>
+					<input type="text" id="username" name="username" required><br><br>
 				
 					<label for="password">Contraseña:</label>
 					<input type="password" id="password" name="password" ><br><br>
