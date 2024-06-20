@@ -29,7 +29,7 @@
                                     <% if (producto.comentarios[r].usuario_id !== undefined) { %>
                                         <div class="data">
                                             <p class="user">
-                                                <strong> <a href="/profile"> <%= producto.comentarios[r].usuarios.username %></a> </strong>
+                                                <strong> <a href="/profile/<%= producto.comentarios[r].usuarios.id%>"> <%= producto.comentarios[r].usuarios.username %></a> </strong>
                                                 <%= producto.comentarios[r].comentario %>
                                             </p>
                                         </div>

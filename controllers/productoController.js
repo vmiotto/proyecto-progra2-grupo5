@@ -35,6 +35,27 @@ const controller = {
         console.log(error);
       });
     },
-};
+    crearproducto: function(req, res){
+      res.render("product-add");
+
+      const producto = {      
+      imagen: req.body.imagen,
+      nombre_producto: req.body.nombre_producto,
+      descripcion: req.body.descripcion,
+      createdAt: new Date()
+    }
+    db.producto
+        .create(producto)
+        .then(function (user) {
+          console.log("Usuario creado correctamente:", user);
+          return res.redirect("../users/login");
+        })
+        .catch(function (err) {
+            console.log("Error al guardar el usuario", err);
+            return res.status(500).send("Error al guardar el usuario en la base de datos.");
+        });
+    },
+    };
+
   
   module.exports = controller;
