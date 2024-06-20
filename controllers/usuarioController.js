@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const usuarios = db.Usuario
 const { validationResult } = require("express-validator");
 const op = db.Sequelize.Op;
+//const { loginValidationResult }= require("express-validator");
 
 const controller = {
     index: function (req, res) {
@@ -24,7 +25,7 @@ const controller = {
                old:req.body
         })
        }
-      //TO DO: Validations
+      
       console.log('entro a register')
       const user = {
         id: req.body.id,
@@ -53,21 +54,31 @@ const controller = {
         console.log(req.body)
     },
     logged: function (req,res) {
+      //obtenemos los restultados de las validaciones       
+      const logValidationErrors = validationResult(req);
+      console.log("validationErrors : ", logValidationErrors)
+      // preguntamos si hay errores y si los hay los enviamos a la vista, junto con lo q venia en el body         
+      if(!logValidationErrors.isEmpty()){
+          return res.render("login",{
+              errors: logValidationErrors.mapped(),
+              old:req.body
+          })
+      } 
         // Buscar el usuario que se quiere loguear.
     console.log(req.body)
     usuarios
     .findOne({
       where: [{ email: req.body.email }],
     })
-    .then(function (usuarioMatch) {
-      const passwordEncriptada = usuarioMatch.password;
-      const check = bcrypt.compareSync(req.body.password, passwordEncriptada);
+    .then(function (usuarioLogueado) {
+      const passwordEncriptada = usuarioLogueado.password;
+      const comparacion = bcrypt.compareSync(req.body.password, passwordEncriptada);
 
       //Si tildó recordame => creamos la cookie.
-      if (check) {
-        req.session.user = user;
+      if (comparacion) {
+        req.session.user = usuarioLogueado;
         if (req.body.recordarme !== undefined) {
-          res.cookie("usuarioGuardado", user.id, { maxAge: 1000 * 60 * 5 });
+          res.cookie("usuarioGuardado", usuarioLogueado.id, { maxAge: 1000 * 60 * 5 });
         }
       } else {
         res.redirect("/login");
@@ -83,10 +94,10 @@ const controller = {
         req.session.destroy();
     
         //Destruir la cookie
-        res.clearCookie("userId");
+        res.clearCookie("usuarioGuardado");
     
         //redireccionar a home
-        res.redirect("/");
+        res.redirect("/users/login");
       },
     
   };

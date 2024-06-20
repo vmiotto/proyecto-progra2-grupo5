@@ -1,5 +1,8 @@
-<%- include('./partials/header.ejs') %>
-
+<% if (locals.user != undefined) { %>
+	<%- include('./partials/headerlogueado.ejs')%>
+<% } else { %>
+	<%- include('./partials/header.ejs')%>
+	<% } %>
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
@@ -8,13 +11,24 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="forms">
-				<form action="/" method="POST">
-					<label for="usuario">Usuario (email):</label>
-					<input type="email" id="email" name="email" ><br><br>
+				<form action="/users/login" method="POST" novalidate>
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" value="<%= locals.old && old.email ? old.email : null %>"><br><br>
+					<!-- aqui preguntamos si hay errores en locals, y si el error coincide con el name del input. si hay enviamos el error en un div con class="error-msg" -->
+					<% if (locals.errors && errors.email) { %>
+						<div class="error-msg">
+							<%= errors.email.msg %>                                
+						</div>                            
+					<% } %>   
 				
 					<label for="password">Contraseña:</label>
 					<input type="password" id="password" name="password" ><br><br>
-				
+					<% if (locals.errors && errors.password) { %>
+						<div class="error-msg">
+							<%= errors.password.msg %>                                
+						</div>                            
+					<% } %>   
+						
 					<label for="recordarme">Recordarme:</label>
 					<input type="checkbox" id="recordarme" name="recordarme"><br><br>
 				

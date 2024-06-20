@@ -12,7 +12,7 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<h2 class="forms"> 
-				<form action="/users/register" method="POST">
+				<form action="/users/register" method="POST" novalidate>
 					<label for="email">Email:</label>
 					<input type="email" id="email" name="email" value="<%= locals.old !== undefined && old.email ? old.email : "" %>"><br><br>
 					<% if (locals.errors && errors.email) { %>
@@ -20,10 +20,16 @@
 					<% } %>
 				
 					<label for="username">Usuario:</label>
-					<input type="text" id="username" name="username" required><br><br>
+					<input type="text" id="username" name="username" value="<%= locals.old !== undefined && old.username ? old.username : "" %>"><br><br>
+					<% if (locals.errors && errors.username) { %>
+						<p class="feedback"><%= errors.username.msg %></p>
+					<% } %>
 				
 					<label for="password">Contraseña:</label>
 					<input type="password" id="password" name="password" ><br><br>
+					<% if (locals.errors && errors.password) { %>
+						<p class="feedback"><%= errors.password.msg %></p>
+					<% } %>
 				
 					<label for="fecha">Fecha de nacimiento:</label>
 					<input type="date" id="fecha" name="fecha" ><br><br>

@@ -28,10 +28,10 @@ const registerValidation = [
         .bail(),
     body("password")
         .notEmpty()
-        .withMessage("Debes Introducir un password")
+        .withMessage("Debes Introducir tu contraseña")
         .bail()
         .isLength({min:4})
-        .withMessage("tu contraseña tiene que tener minimo 4 caracteres")
+        .withMessage("Tu contraseña tiene que tener minimo 4 caracteres")
         .bail(),
 
 ]

@@ -36,13 +36,13 @@ app.use(
 );
 
 app.use(function (req, res, next) {
-  if (req.session.usuarioLogueado != undefined) {
-    res.locals.user = req.session.usuarioLogueado;
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user;
   }
   return next();
 });
 app.use(function(req, res, next){
-  if(req.session.usuarioLogueado == undefined && req.cookies.usuarioGuardado != undefined){
+  if(req.session.user == undefined && req.cookies.usuarioGuardado != undefined){
     let cookieId = req.cookies.usuarioGuardado;
     db.Usuario.findByPk(cookieId)
     .then(function(user){
