@@ -29,22 +29,23 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   session({
-    secret: "Secreto del session",
+    secret: "proyectoIntegrador",
     resave: false,
     saveUninitialized: true,
   })
 );
 
 app.use(function (req, res, next) {
-  if (req.session.usuarioLogueado !== undefined) {
+  if (req.session.usuarioLogueado != undefined) {
     res.locals.user = req.session.usuarioLogueado;
   }
   return next();
 });
 app.use(function(req, res, next){
-  if(req.session.usuarioLogueado === undefined && req.cookies.usuarioGuardado !== undefined){
+  if(req.session.usuarioLogueado == undefined && req.cookies.usuarioGuardado != undefined){
     let cookieId = req.cookies.usuarioGuardado;
-    db.Usuario.findByPk(cookieId).then(function(user){
+    db.Usuario.findByPk(cookieId)
+    .then(function(user){
       req.session.user = user;
       res.locals.user = req.session.user;     
     }).catch(function(err){

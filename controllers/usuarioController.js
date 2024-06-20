@@ -1,6 +1,7 @@
 const db= require("../database/models")
 const bcrypt = require('bcryptjs');
 const usuarios = db.Usuario
+const { validationResult } = require("express-validator");
 const op = db.Sequelize.Op;
 
 const controller = {
@@ -12,6 +13,17 @@ const controller = {
         res.render("register", {})
     },
     store: function(req, res) {
+       const validationErrors = validationResult(req);
+       console.log("validationErrors : ", validationErrors)
+        // preguntamos si hay errores y si los hay los enviamos a la vista, junto con lo q venia en el body
+        if(validationErrors.isEmpty()){
+
+         } else { 
+          return res.render("register",{
+               errors: validationErrors.mapped(),
+               old:req.body
+        })
+       }
       //TO DO: Validations
       const user = {
         id: req.body.id,
