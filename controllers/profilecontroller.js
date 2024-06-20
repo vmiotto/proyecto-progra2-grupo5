@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const usuario = db.Usuario
+const { validationResult } = require("express-validator")
 const controller = {
     index: function (req, res) {
       let id = req.params.id
