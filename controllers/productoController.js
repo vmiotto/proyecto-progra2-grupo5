@@ -11,7 +11,7 @@ const controller = {
         )
     .then(function(data){
         console.log(data)
-        return res.render('product', { productos: data });
+        return res.render('product', 'index', { productos: data });
     })
     .catch(error =>{
         console.log(error);
