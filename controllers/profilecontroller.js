@@ -50,11 +50,11 @@ const controller = {
 
 
     editProfileForm: function(req, res) {
-      const userId = req.params.id;
+      const userId = req.session.user.id;
       db.Usuario.findByPk(userId)
           .then(usuario => {
               if (!usuario) {
-                  return res.redirect('/'); // O manejar el error de otra manera
+                  return res.redirect('/');
               }
               console.log('Datos del usuario:', usuario);
               res.render("profile-edit", { usuario });
@@ -62,7 +62,7 @@ const controller = {
           .catch(err => console.error(err));
   },
     updateProfile: function(req, res) {
-      const userId = req.params.id;
+      const userId = req.session.user.id;
       const validationErrors = validationResult(req);
       const data = req.body;
 
