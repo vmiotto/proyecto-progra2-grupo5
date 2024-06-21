@@ -16,7 +16,9 @@ const controller = {
       .then (function(data){
         res.render("profile", { usuario: data });
       })
-      
+      .catch(function(error){
+        console.log(error)
+      })
     },
     perfil:function (req, res) {
       res.render('profile-edit', { usuario: usuario[0] })
