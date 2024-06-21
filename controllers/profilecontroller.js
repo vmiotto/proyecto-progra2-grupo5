@@ -26,17 +26,15 @@ const controller = {
       res.render('product-add', {})
     },
     store: function(req,res){
+      let data = req.body;
       const validationErrors = validationResult(req);
       console.log('validationErrors : ', validationErrors)
-      if(validationErrors.isEmpty()){
-      } else { 
-       return res.render("product-add",{
-            errors: validationErrors.mapped(),
-            old: req.body
-     })
-    }
-    let data = req.body;
-
+      if(!validationErrors.isEmpty()){
+        return res.render("product-add",{
+          errors: validationErrors.mapped(),
+          old: data
+   })
+      } 
     let producto = {
         imagen: data.imagen,
         nombre_producto: data.nombre_producto,

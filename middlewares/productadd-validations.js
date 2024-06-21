@@ -5,17 +5,17 @@ const bcryptjs = require('bcryptjs');
 const prodAddValidation = [
     body("imagen")
         .notEmpty()
-        .withMessage("Debes completar tu Imagen")
+        .withMessage("Debes completar tu imagen")
         .bail(),
     body("nombre_producto")
         .notEmpty()
-        .withMessage("Debes Introducir un password")
+        .withMessage("Debes introducir un nombre")
         .bail(),
     body("descripcion")
         .notEmpty()
         .withMessage("Debes introducir una descripcion")
         .bail(),
-        
+  
 
 ]
 
