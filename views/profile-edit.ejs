@@ -11,30 +11,33 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> <h2 class="forms">
-				<form action="/profile/edit" method="POST" novalidate>
+				<form action="/profile/edit/<%=usuario.id%>" method="POST" novalidate>
 					<label for="email">Email:</label>
-					<input type="email" id="email" name="email" value="<%= locals.user.email %>"><br><br>
-					<% if (errors && errors.email) { %>
+					<input type="email" id="email" name="email" value="<%= usuario.email %>"><br><br>
+					<% if (locals.errors && errors.email) { %>
 						<p class="feedback"><%= errors.email.msg %></p>
 					<% } %>
 				
 					<label for="username">Usuario:</label>
-					<input type="text" id="username" name="username" value="<%= locals.user.username %>"><br><br>
-					<% if (errors && errors.username) { %>
+					<input type="text" id="username" name="username" value="<%= usuario.username %>"><br><br>
+					<% if (locals.errors && errors.username) { %>
 						<p class="feedback"><%= errors.username.msg %></p>
 					<% } %>
 				
 					<label for="password">Contraseña:</label>
 					<input type="password" id="password" name="password"><br><br>
-					<% if (errors && errors.password) { %>
+					<% if (locals.errors && errors.password) { %>
 						<p class="feedback"><%= errors.password.msg %></p>
 					<% } %>
 				
 					<label for="fecha">Fecha de nacimiento:</label>
-					<input type="date" id="fecha" name="fecha" value=""><br><br>
+					<input type="date" id="fecha" name="fecha" <% if (usuario.fecha) {%>
+						value="<%=usuario.fecha%>" <%}%> value=""><br><br>
 				
 					<label for="dni">Número de documento:</label>
-					<input type="number" id="dni" name="dni" value=""><br><br>
+					<input type="number" id="dni" name="dni" 
+					<% if (usuario.dni) {%>
+						value="<%=usuario.dni%>" <%}%> ><br><br>
 				
 					<input type="submit" value="Enviar">
 				</form>

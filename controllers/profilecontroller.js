@@ -1,6 +1,7 @@
 const db = require('../database/models')
 const usuario = db.Usuario
 const { validationResult } = require("express-validator")
+const bcrypt = require('bcryptjs');
 const controller = {
     index: function (req, res) {
       let id = req.params.id
@@ -50,7 +51,7 @@ const controller = {
 
 
     editProfileForm: function(req, res) {
-      const userId = req.session.user.id;
+      const userId = req.params.id
       db.Usuario.findByPk(userId)
           .then(usuario => {
               if (!usuario) {
@@ -69,11 +70,18 @@ const controller = {
       const data = req.body;
 
       if (!validationErrors.isEmpty()) {
-          return res.render("profile-edit", {
+        db.Usuario.findByPk(userId)
+          .then(usuario => {
+              if (!usuario) {
+                  return res.redirect('/');
+              }
+           res.render("profile-edit", {
+            usuario:usuario,
             errors: validationErrors.mapped(),
-            old: data
-                  });
-      }
+            old: data});        
+      })
+      .catch(err => console.error(err));
+    } else{
 
       // Lógica para actualizar el perfil si no hay errores de validación
       let updates = {
@@ -84,14 +92,16 @@ const controller = {
       };
       if (data.password) {
           // En un entorno real, deberías cifrar la contraseña antes de guardarla
-          updates.password = data.password;
+          updates.password = bcrypt.hashSync(data.password,10)
       }
 
       db.Usuario.update(updates, { where: { id: userId } })
-          .then(() => {
-              return res.redirect('/profile');
+          .then(function() {
+            req.session.user= updates
+            return res.redirect(`/profile/${userId}`);
           })
           .catch(err => console.error(err));
+          }
   },
 };
   
