@@ -7,6 +7,7 @@ const productoController = require("../controllers/productoController");
 
 router.get("/", productoController.index)
 router.get("/:id", productoController.id)
+router.post('/product/:id', productoController.addcomment);
 
 
 

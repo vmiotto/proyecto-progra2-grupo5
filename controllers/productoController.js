@@ -1,5 +1,6 @@
 const db = require('../database/models')
 const producto = db.Producto
+const comentario = db.Comentario
 const controller = {
   index: function (req, res) {
       producto.findAll(
@@ -39,6 +40,33 @@ const controller = {
         console.log(error);
       });
     },
+  addcomment: function(req,res){
+      const { comentario } = req.body;
+      const productId = req.params.id;
+      const userId = req.session.user.id;
+
+      if (comentario.length < 3) {
+        return res.status(400).send({ error: 'El comentario debe tener al menos 3 caracteres.' });
+      }
+      const nuevocomentario = {
+        comentario: comentario,
+        usuario_id: userId,
+        producto_id: productId,
+        createdAt: new Date()
+      };
+      console.log(nuevocomentario)
+      db.Comentario
+      .create(nuevocomentario)
+      .then(function (nuevocomentario) {
+        console.log("Comentario creado correctamente:", nuevocomentario);
+        return res.redirect(`/product/${productId}`);
+      })
+      .catch(function (err) {
+          console.log("Error al guardar el comentario", err);
+          return res.status(500).send("Error al guardar el comentario en la base de datos.");
+      });
+
+    }
     };
 
   

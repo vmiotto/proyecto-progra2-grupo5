@@ -40,10 +40,16 @@
                             <hr>
                         
                         <% } %>
-                        <form class="form" action="" method="GET">
-                            <input class="form-input" type="text" value="" placeholder="Agregar comentario">
-                            <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                        </form>
+                        <% if (locals.user) { %>
+                            <form class="form" action="/product/<%= producto.id%>" method="POST">
+                                <input class="form-input" name="comentario" type="text" placeholder="Agregar comentario">
+                                <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                            </form>
+                        <% } else { %>
+                            <form>
+                                <button type="submit" class="buy-now-button">Debes estar logueado para comentar</button>
+                            </form>
+                        <% } %>
                         <% if(locals.user){ %>
                         <form class="form" action="" method="GET">
                             <% if (producto.usuario_id == locals.user.id) { %>
