@@ -38,13 +38,20 @@
 									
                                 </article>
                             </section>
+                            <hr>
+                        </div>
                         <% } %>
-						<form class="form" action="" method="GET">
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-						</form>
-						<hr>
-                    </div>
+                        <form class="form" action="" method="GET">
+                            <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                            <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                        </form>
+                        <% if(locals.user){ %>
+                        <form class="form" action="" method="GET">
+                            <% if (producto.usuario_id == locals.user.id) { %>
+                                <button type="submit" class="buy-now-button">EDITAR</button>
+                            <% } %>
+                        </form>
+                        <% } %>
                 </div>
             </div>
         </div>
