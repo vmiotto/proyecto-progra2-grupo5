@@ -11,15 +11,15 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> <h2 class="forms">
-				<form action="/profile/<%= usuario.id %>" method="POST" novalidate>
+				<form action="/profile/edit" method="POST" novalidate>
 					<label for="email">Email:</label>
-					<input type="email" id="email" name="email" value="<%= usuario.email %>"><br><br>
+					<input type="email" id="email" name="email" value="<%= locals.user.email %>"><br><br>
 					<% if (errors && errors.email) { %>
 						<p class="feedback"><%= errors.email.msg %></p>
 					<% } %>
 				
 					<label for="username">Usuario:</label>
-					<input type="text" id="username" name="username" value="<%= usuario.username %>"><br><br>
+					<input type="text" id="username" name="username" value="<%= locals.user.username %>"><br><br>
 					<% if (errors && errors.username) { %>
 						<p class="feedback"><%= errors.username.msg %></p>
 					<% } %>
@@ -31,10 +31,10 @@
 					<% } %>
 				
 					<label for="fecha">Fecha de nacimiento:</label>
-					<input type="date" id="fecha" name="fecha" value="<%= usuario.fecha ? usuario.fecha.toISOString().split('T')[0] : "" %>"><br><br>
+					<input type="date" id="fecha" name="fecha" value=""><br><br>
 				
 					<label for="dni">Número de documento:</label>
-					<input type="number" id="dni" name="dni" value="<%= usuario.dni %>"><br><br>
+					<input type="number" id="dni" name="dni" value=""><br><br>
 				
 					<input type="submit" value="Enviar">
 				</form>

@@ -19,7 +19,7 @@ const controller = {
     },
     perfil:function (req, res) {
       res.render('profile-edit', { usuario: usuario[0] })
-      res.render('headerlogueado', {usuario: usuario[0] })
+      //res.render('headerlogueado', {usuario: usuario[0] })
     },
     add: function (req,res) {
       
@@ -58,8 +58,10 @@ const controller = {
               }
               console.log('Datos del usuario:', usuario);
               res.render("profile-edit", { usuario });
+              
           })
           .catch(err => console.error(err));
+        
   },
     updateProfile: function(req, res) {
       const userId = req.session.user.id;
@@ -67,15 +69,10 @@ const controller = {
       const data = req.body;
 
       if (!validationErrors.isEmpty()) {
-          return db.Usuario.findByPk(userId)
-              .then(usuario => {
-                  res.render("profile-edit", {
-                      usuario,
-                      errors: validationErrors.mapped(),
-                      old: data
+          return res.render("profile-edit", {
+            errors: validationErrors.mapped(),
+            old: data
                   });
-              })
-              .catch(err => console.error(err));
       }
 
       // Lógica para actualizar el perfil si no hay errores de validación
