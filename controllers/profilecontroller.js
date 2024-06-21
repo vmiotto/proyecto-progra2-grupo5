@@ -23,10 +23,11 @@ const controller = {
     },
     add: function (req,res) {
       
-      res.render('product-add', {'usuario': usuario[0]})
+      res.render('product-add', {})
     },
     store: function(req,res){
       const validationErrors = validationResult(req);
+      console.log('validationErrors : ', validationErrors)
       if(validationErrors.isEmpty()){
       } else { 
        return res.render("product-add",{

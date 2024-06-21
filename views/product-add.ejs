@@ -10,7 +10,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form class="agregarproducto" action="/profile" method="POST" enctype="multipart/form-data" novalidate>
+				<form class="agregarproducto" action="/profile/product-add" method="POST" enctype="multipart/form-data" novalidate>
 					<div>
 						<label for="imagen">Imagen:</label>
 						<input type="file" id="imagen" name="imagen" accept="image/*" value="<%= locals.old !== undefined && old.imagen ? old.imagen : "" %>">
