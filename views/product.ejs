@@ -20,6 +20,7 @@
                         <p class="product-detail-description">
                             <%= producto.descripcion %>
                         </p>
+                        <p class="product-detail-description"> <a href="../profile/<%=producto.usuario_id%>"> Publicado por <%=producto.usuarios.username%></a></p>
                     </article>
                     <div class="col-12 col-lg-4">
                         <% for (let r=0; r < producto.comentarios.length; r++) { %>
