@@ -13,11 +13,12 @@
 				
 				<div class="d-flex align-items-center ">					
 					<h1 class="main-title"><%=usuario.username%>
+						<%if(locals.user != undefined) { %>
 						<% if(locals.user.id==usuario.id) { %>
 						<a href="/profile/edit/<%=usuario.id%>">
 							<i class="fas fa-cog"></i>
 						</a>		
-						<%}%>
+						<%}}%>
 					</h1>
 					<a class="btn mt-3 ml-4" href="profile">SEGUIR</a>
 				</div>
