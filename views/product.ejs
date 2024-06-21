@@ -24,7 +24,7 @@
                     </article>
                     <div class="col-12 col-lg-4">
                         <% for (let r=0; r < producto.comentarios.length; r++) { %>
-                            <section class="comments">
+                            <section class="comments" >
                                 <article>
                                     <img src="<%=producto.comentarios[r].image %>" alt="">
                                     <% if (producto.comentarios[r].usuario_id !== undefined) { %>
@@ -34,12 +34,11 @@
                                                 <%= producto.comentarios[r].comentario %>
                                             </p>
                                         </div>
-                                    <% } %>
-									
+                                    <% } %>	
                                 </article>
                             </section>
                             <hr>
-                        </div>
+                        
                         <% } %>
                         <form class="form" action="" method="GET">
                             <input class="form-input" type="text" value="" placeholder="Agregar comentario">

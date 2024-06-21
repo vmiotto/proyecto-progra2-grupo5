@@ -32,9 +32,8 @@ const controller = {
       if(!validationErrors.isEmpty()){
         return res.render("product-add",{
           errors: validationErrors.mapped(),
-          old: data
-   })
-      } 
+          old: data })
+      }
     let producto = {
         imagen: data.imagen,
         nombre_producto: data.nombre_producto,
@@ -47,8 +46,57 @@ const controller = {
     .catch(error => {
       console.log(error);
     })
-    }
-  };
+    },
+
+
+    editProfileForm: function(req, res) {
+      const userId = req.params.id;
+      db.Usuario.findByPk(userId)
+          .then(usuario => {
+              if (!usuario) {
+                  return res.redirect('/'); // O manejar el error de otra manera
+              }
+              console.log('Datos del usuario:', usuario);
+              res.render("profile-edit", { usuario });
+          })
+          .catch(err => console.error(err));
+  },
+    updateProfile: function(req, res) {
+      const userId = req.params.id;
+      const validationErrors = validationResult(req);
+      const data = req.body;
+
+      if (!validationErrors.isEmpty()) {
+          return db.Usuario.findByPk(userId)
+              .then(usuario => {
+                  res.render("profile-edit", {
+                      usuario,
+                      errors: validationErrors.mapped(),
+                      old: data
+                  });
+              })
+              .catch(err => console.error(err));
+      }
+
+      // Lógica para actualizar el perfil si no hay errores de validación
+      let updates = {
+          email: data.email,
+          username: data.username,
+          fecha: data.fecha,
+          dni: data.dni,
+      };
+      if (data.password) {
+          // En un entorno real, deberías cifrar la contraseña antes de guardarla
+          updates.password = data.password;
+      }
+
+      db.Usuario.update(updates, { where: { id: userId } })
+          .then(() => {
+              return res.redirect('/profile');
+          })
+          .catch(err => console.error(err));
+  },
+};
   
   module.exports = controller;
   
