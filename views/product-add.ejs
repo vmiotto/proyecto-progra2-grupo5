@@ -13,7 +13,7 @@
 				<form class="agregarproducto" action="/profile/product-add" method="POST" enctype="multipart/form-data" novalidate>
 					<div>
 						<label for="imagen">Imagen:</label>
-						<input type="file" id="imagen" name="imagen" accept="image/*" value="<%= locals.old !== undefined && old.imagen ? old.imagen : "" %>">
+						<input type="input" id="imagen" name="imagen" accept="image/*" value="<%= locals.old !== undefined && old.imagen ? old.imagen : "" %>">
 						<% if (locals.errors && errors.imagen) { %>
 							<p class="feedback"><%= errors.imagen.msg %></p>
 						<% } %>
@@ -30,8 +30,8 @@
 						<textarea id="descripcion" name="descripcion" rows="4" cols="50" style="resize: none;" value="<%= locals.old !== undefined && old.imagen ? old.imagen : "" %>"></textarea>
 						<% if (locals.errors && errors.descripcion) { %>
 							<p class="feedback"><%= errors.descripcion.msg %></p>
-						<% } %>
-					</div>
+						<% } %>  
+					</div>					
 					<div>
 						<input type="submit" value="Enviar">
 					</div>

@@ -29,7 +29,8 @@ const controller = {
       res.render('product-add', {})
     },
     store: function(req,res){
-      let data = req.body;
+      const data = req.body;
+      console.log('esta es la data que se manda',data)
       const validationErrors = validationResult(req);
       console.log('validationErrors : ', validationErrors)
       if(!validationErrors.isEmpty()){
@@ -37,7 +38,7 @@ const controller = {
           errors: validationErrors.mapped(),
           old: data })
       }
-    let producto = {
+    const producto = {
         imagen: data.imagen,
         nombre_producto: data.nombre_producto,
         descripcion: data.descripcion

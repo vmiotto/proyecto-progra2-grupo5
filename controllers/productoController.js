@@ -40,16 +40,21 @@ const controller = {
         console.log(error);
       });
     },
+  add: function(req,res){
+    res.render('product', {})
+  },
   addcomment: function(req,res){
-      const { comentario } = req.body;
+      const  comment = req.body.comentario ;
       const productId = req.params.id;
       const userId = req.session.user.id;
+
+      console.log('esta es la info del comentario', req.body)
 
       if (comentario.length < 3) {
         return res.status(400).send({ error: 'El comentario debe tener al menos 3 caracteres.' });
       }
       const nuevocomentario = {
-        comentario: comentario,
+        comentario: comment,
         usuario_id: userId,
         producto_id: productId,
         createdAt: new Date()
