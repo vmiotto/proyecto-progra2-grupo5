@@ -16,8 +16,12 @@
             <div class="product-detail">
                 <div class="row">
                     <article class="col-12 col-lg-8 product-detail-info">
-                        <img src="../imagenes/<%=producto.imagen%>" alt="" class="product-detail-img">
-                        <p class="product-detail-description">
+                        <% if(new Date(producto.createdAt) > new Date('2024-06-21')){ %>
+                            <img src= "<%=producto.imagen %>" alt="<%=producto.nombre_producto%>"  class="product-detail-img">>
+                            <% }else{ %>
+                            <img src= "../imagenes/<%=producto.imagen %>" alt="<%=producto.nombre_producto%>"  class="product-detail-img">>
+                            <% } %>                        
+                            <p class="product-detail-description">
                             <%= producto.descripcion %>
                         </p>
                         <p class="product-detail-description"> <a href="../profile/<%=producto.usuario_id%>"> Publicado por <%=producto.usuarios.username%></a></p>

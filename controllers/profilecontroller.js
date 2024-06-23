@@ -38,19 +38,21 @@ const controller = {
           errors: validationErrors.mapped(),
           old: data })
       }
-    const producto = {
-        imagen: data.imagen,
-        nombre_producto: data.nombre_producto,
-        descripcion: data.descripcion
-    }
-    db.Producto.create(producto)
-    .then((productoCreado) => {
-      return res.redirect('/');
-    })
-    .catch(error => {
-      console.log(error);
-    })
-    },
+      const producto = {
+          imagen: data.imagen,
+          nombre_producto: data.nombre_producto,
+          descripcion: data.descripcion,
+          usuario_id: req.session.user.id,
+      }
+      
+      db.Producto.create(producto)
+      .then((productoCreado) => {
+        return res.redirect('/');
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      },
 
 
     editProfileForm: function(req, res) {

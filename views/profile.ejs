@@ -47,8 +47,11 @@
 					<section class="product-box">
 						<a href="/product/<%= usuario.productos[i].id %>">
 							<figure class="product-box_image">
-								<img src= "/imagenes/<%=usuario.productos[i].imagen %>" alt="<%=usuario.productos[i].nombre_producto%>">
-							</figure>
+								<% if(new Date(usuario.productos[i].createdAt) > new Date('2024-06-21')){ %>
+									<img src= "<%=usuario.productos[i].imagen %>" alt="<%=usuario.productos[i].nombre_producto%>">
+									<% }else{ %>
+									<img src= "../imagenes/<%=usuario.productos[i].imagen %>" alt="<%=usuario.productos[i].nombre_producto%>">
+									<% } %>							
 							<article class="product-box_data">
 								<h2><%= usuario.productos[i].nombre_producto %></h2>
 								<p><%= usuario.productos[i].descripcion %></p>

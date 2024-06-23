@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 13-06-2024 a las 20:25:18
+-- Tiempo de generación: 23-06-2024 a las 02:20:37
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -136,7 +136,8 @@ INSERT INTO `usuarios` (`id`, `username`, `email`, `password`, `fecha`, `dni`, `
 (2, 'ana.garcia', 'ana.garcia@example.com', 'secreto456', '1985-10-28', 87654321, 'ruta/foto2.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (3, 'carlitos123', 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'ruta/foto3.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (4, 'laura_mart', 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'ruta/foto4.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'ruta/foto5.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL);
+(5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'ruta/foto5.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(6, 'probandox', 'prueba@gmail.com', '$2a$10$bQNoilNKJOO1LbubNuUI7elwjJW.k1TxqhqRidy1rFlDaEL9GM2AG', '1985-12-12', 22875834, 'imagen.jpg', '2024-06-20 15:32:34', '2024-06-21 20:09:10', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -177,13 +178,13 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas

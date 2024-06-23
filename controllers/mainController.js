@@ -11,7 +11,7 @@ const controller = {
       ]
     })
     .then(function(data){
-      //console.log("productos: ", JSON.stringify(data,null, 4))
+      console.log("productos: ", JSON.stringify(data,null, 4))
       return res.render('index', {'productos': data})
     })
     .catch(function(error){
