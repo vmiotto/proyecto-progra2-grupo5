@@ -75,12 +75,11 @@ const controller = {
     editProduct: function(req, res) {
       const productID = req.params.id
       db.Producto.findByPk(productID)
-          .then(usuario => {
-              if (!usuario) {
+          .then(producto => {
+              if (!producto) {
                   return res.redirect('/');
               }
-              console.log('Datos del usuario:', usuario);
-              res.render("product-edit", { usuario });
+              res.render("product-edit", { producto });
               
           })
           .catch(err => console.error(err));
@@ -92,22 +91,22 @@ const controller = {
       const data = req.body;
 
       if (!validationErrors.isEmpty()) {
-        db.Usuario.findByPk(productID)
-          .then(usuario => {
-              if (!usuario) {
+        db.Producto.findByPk(productID)
+          .then(producto => {
+              if (!producto) {
                   return res.redirect('/');
               }
-           res.render("profile-edit", {
-            usuario:usuario,
+           res.render("product-edit", {
+            producto:producto,
             errors: validationErrors.mapped(),
             old: data});        
       })
       .catch(err => console.error(err));
     } else{
 
-      // Lógica para actualizar el perfil si no hay errores de validación
+
       let updates = {
-          imagen: data.email,
+          imagen: data.imagen,
           nombre_producto: data.nombre_producto,
           descripcion: data.descripcion,
       };
