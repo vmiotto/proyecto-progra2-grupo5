@@ -41,7 +41,7 @@
                         
                         <% } %>
                         <% if (locals.user) { %>
-                            <form class="form" action="/product>" method="POST">
+                            <form class="form" action="/product/<%=producto.id%>" method="POST">
                                 <input class="form-input" name="comentario" type="text" placeholder="Agregar comentario">
                                 <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                             </form>
@@ -53,7 +53,7 @@
                         <% if(locals.user){ %>
                         <form class="form" action="" method="GET">
                             <% if (producto.usuario_id == locals.user.id) { %>
-                                <button type="submit" class="buy-now-button">EDITAR</button>
+                                <button type="submit" class="buy-now-button">EDITAR PRODUCTO</button>
                             <% } %>
                         </form>
                         <% } %>

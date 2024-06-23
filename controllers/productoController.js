@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const db = require('../database/models')
 const producto = db.Producto
 const comentario = db.Comentario
@@ -44,7 +45,7 @@ const controller = {
     res.render('product', {})
   },
   addcomment: function(req,res){
-      const  comment = req.body.comentario ;
+      const comment = req.body.comentario;
       const productId = req.params.id;
       const userId = req.session.user.id;
 
@@ -57,7 +58,7 @@ const controller = {
         comentario: comment,
         usuario_id: userId,
         producto_id: productId,
-        createdAt: new Date()
+        created_at: new Date()
       };
       console.log(nuevocomentario)
       db.Comentario
