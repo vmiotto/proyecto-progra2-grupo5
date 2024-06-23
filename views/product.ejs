@@ -55,7 +55,7 @@
                             </form>
                         <% } %>
                         <% if(locals.user){ %>
-                        <form  action="" method="GET">
+                        <form  action="/product/edit/<%=producto.id%>" method="GET">
                             <% if (producto.usuario_id == locals.user.id) { %>
                                 <button type="submit" >EDITAR PRODUCTO</button>
                             <% } %>

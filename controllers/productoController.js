@@ -71,8 +71,56 @@ const controller = {
           console.log("Error al guardar el comentario", err);
           return res.status(500).send("Error al guardar el comentario en la base de datos.");
       });
+    },
+    editProduct: function(req, res) {
+      const productID = req.params.id
+      db.Producto.findByPk(productID)
+          .then(usuario => {
+              if (!usuario) {
+                  return res.redirect('/');
+              }
+              console.log('Datos del usuario:', usuario);
+              res.render("product-edit", { usuario });
+              
+          })
+          .catch(err => console.error(err));
+        
+  },
+    updateProduct: function(req, res) {
+      const productID = req.params.id;
+      const validationErrors = validationResult(req);
+      const data = req.body;
 
-    }
+      if (!validationErrors.isEmpty()) {
+        db.Usuario.findByPk(productID)
+          .then(usuario => {
+              if (!usuario) {
+                  return res.redirect('/');
+              }
+           res.render("profile-edit", {
+            usuario:usuario,
+            errors: validationErrors.mapped(),
+            old: data});        
+      })
+      .catch(err => console.error(err));
+    } else{
+
+      // Lógica para actualizar el perfil si no hay errores de validación
+      let updates = {
+          imagen: data.email,
+          nombre_producto: data.nombre_producto,
+          descripcion: data.descripcion,
+      };
+
+      db.Producto.update(updates, { where: { id: productID } })
+          .then(function() {
+            req.session.user= updates
+            return res.redirect(`/product/${productID}`);
+          })
+          .catch(err => console.error(err));
+          }
+  },
+
     };
 
   
