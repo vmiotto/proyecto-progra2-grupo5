@@ -61,7 +61,7 @@
                             <% } %>
                         </form>
                         <br>
-                        <form  action="" method="GET">
+                        <form action="/product/delete/<%= producto.id %>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este producto?');">
                             <% if (producto.usuario_id == locals.user.id) { %>
                                 <button type="submit" >ELIMINAR PRODUCTO</button>
                             <% } %>

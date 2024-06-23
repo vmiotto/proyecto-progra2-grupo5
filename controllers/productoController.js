@@ -126,6 +126,21 @@ const controller = {
           .catch(err => console.error(err));
           }
   },
+  borrar: function(req, res){
+    const productId = req.params.id
+    producto.destroy(
+      { where: { id: productId }}
+    )
+    .then(function(){
+      console.log('Producto eliminado')
+      return res.redirect('/')
+    })
+    .catch(function(error){
+      console.log(error)
+      return res.status(500).send("Error al eliminar el producto");
+
+    })
+  }
 
     };
 

@@ -11,6 +11,7 @@ router.get("/:id", productoController.id)
 router.post('/product/:id', productoController.addcomment);
 router.get("/edit/:id", productoController.editProduct);
 router.post("/edit/:id", prodAddValidation, productoController.updateProduct);
+router.post("/delete/:id", productoController.borrar)
 
 
 
