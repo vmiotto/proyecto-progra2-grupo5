@@ -20,14 +20,14 @@
 					</div>
 					<div>
 						<label for="nombre_producto">Nombre del Producto:</label>
-						<input type="text" id="nombre_producto" name="nombre_producto" value="<%= locals.old && old.nombre_producto ? old.nombre_producto : null %>">
+						<input  type="text" id="nombre_producto" name="nombre_producto" value="<%= locals.old && old.nombre_producto ? old.nombre_producto : null %>">
 						<% if (locals.errors && errors.nombre_producto) { %>
 							<p class="feedback"><%= errors.nombre_producto.msg %></p>
 						<% } %>
 					</div>
 					<div>
 						<label for="descripcion">Descripción:</label>
-						<input type="text" id="descripcion" name="descripcion" value="<%= locals.old && old.descripcion ? old.descripcion : null %>">
+						<input class="agregardescripcion" type="text" id="descripcion" name="descripcion" value="<%= locals.old && old.descripcion ? old.descripcion : null %>">
 						<% if (locals.errors && errors.descripcion) { %>
 							<p class="feedback"><%= errors.descripcion.msg %></p>
 						<% } %>  

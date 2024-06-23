@@ -55,9 +55,15 @@
                             </form>
                         <% } %>
                         <% if(locals.user){ %>
-                        <form class="form" action="" method="GET">
+                        <form  action="" method="GET">
                             <% if (producto.usuario_id == locals.user.id) { %>
-                                <button type="submit" class="buy-now-button">EDITAR PRODUCTO</button>
+                                <button type="submit" >EDITAR PRODUCTO</button>
+                            <% } %>
+                        </form>
+                        <br>
+                        <form  action="" method="GET">
+                            <% if (producto.usuario_id == locals.user.id) { %>
+                                <button type="submit" >ELIMINAR PRODUCTO</button>
                             <% } %>
                         </form>
                         <% } %>
