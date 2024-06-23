@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 23-06-2024 a las 21:33:04
+-- Tiempo de generación: 23-06-2024 a las 22:15:12
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -84,7 +84,7 @@ INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`, `upd
 CREATE TABLE `productos` (
   `id` int(10) UNSIGNED NOT NULL,
   `usuario_id` int(10) UNSIGNED DEFAULT NULL,
-  `imagen` varchar(100) DEFAULT NULL,
+  `imagen` varchar(1000) DEFAULT NULL,
   `nombre_producto` varchar(50) NOT NULL,
   `descripcion` varchar(1000) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -107,7 +107,8 @@ INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombre_producto`, `descr
 (8, 3, 'porsche.jpg', 'Porsche 911 Turbo S', 'El Porsche 911 Turbo S es un icono del rendimiento y la tecnología de vanguardia. Con su diseño aerodinámico y su potente motor, este deportivo de alto rendimiento ofrece una experiencia de conducción emocionante y envolvente. Desde su lujoso interior hasta su impresionante rendimiento en carretera, el 911 Turbo S es una máquina impresionante en todos los sentidos.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (9, 4, 'aston.jpg', 'Aston Martin DB11', 'El Aston Martin DB11 es una combinación perfecta de estilo, rendimiento y artesanía británica. Con su elegante diseño exterior y su potente motor, este coupé de alta gama ofrece una experiencia de conducción emocionante y lujosa. Cada detalle, desde sus líneas aerodinámicas hasta su interior meticulosamente diseñado, refleja la pasión de Aston Martin por la excelencia en la ingeniería automotriz.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (10, 5, 'lexus.jpeg', 'Lexus LC 500', 'El Lexus LC 500 es un gran turismo de lujo que cautiva con su diseño cautivador y su rendimiento emocionante. Con su distintivo estilo exterior y su interior lujosamente equipado, este vehículo ofrece una experiencia de conducción incomparable. Desde su potente motor hasta sus avanzadas características de seguridad y entretenimiento, el LC 500 es la combinación perfecta de lujo y deportividad.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
-(12, 6, 'https://cdn.motor1.com/images/mgl/ZbA8Z/s1/critica-hyundai-veloster-n.webp', ' Hyundai Veloster 3.5 ', 'Este auto es muy raro y rápido!', '2024-06-23 02:22:19', '2024-06-23 21:09:18', NULL);
+(12, 6, 'https://cdn.motor1.com/images/mgl/ZbA8Z/s1/critica-hyundai-veloster-n.webp', '  Hyundai Veloster 2.5  ', 'Este auto es muy raro y rápido!', '2024-06-23 02:22:19', '2024-06-23 21:43:50', NULL),
+(13, 6, 'https://fotos.perfil.com/2023/02/13/volkswagen-gol-1508369.jpg', ' Volkswagen Gol 3.5', 'Bueno, bonito y barato.', '2024-06-23 21:40:41', '2024-06-23 21:48:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -179,7 +180,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

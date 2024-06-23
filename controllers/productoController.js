@@ -74,7 +74,7 @@ const controller = {
     },
     editProduct: function(req, res) {
       const productID = req.params.id
-      validationErrors = validationResult(req)
+      const validationErrors = validationResult(req)
       if(validationErrors.isEmpty()){
         db.Producto.findByPk(productID)
             .then(producto => {
@@ -86,7 +86,7 @@ const controller = {
             })
             .catch(err => console.error(err));
       } else { 
-       return res.render("register",{
+       return res.render("product-edit",{
             errors: validationErrors.mapped(),
             old:req.body
        })
@@ -105,13 +105,12 @@ const controller = {
                   return res.redirect('/');
               }
            res.render("product-edit", {
-            producto:producto,
+            producto: producto,
             errors: validationErrors.mapped(),
             old: data});        
       })
       .catch(err => console.error(err));
     } else{
-
 
       let updates = {
           imagen: data.imagen,
