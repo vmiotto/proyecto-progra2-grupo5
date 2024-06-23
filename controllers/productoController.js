@@ -74,17 +74,25 @@ const controller = {
     },
     editProduct: function(req, res) {
       const productID = req.params.id
-      db.Producto.findByPk(productID)
-          .then(producto => {
-              if (!producto) {
-                  return res.redirect('/');
-              }
-              res.render("product-edit", { producto });
-              
-          })
-          .catch(err => console.error(err));
+      validationErrors = validationResult(req)
+      if(validationErrors.isEmpty()){
+        db.Producto.findByPk(productID)
+            .then(producto => {
+                if (!producto) {
+                    return res.redirect('/');
+                }
+                res.render("product-edit", { producto });
+                
+            })
+            .catch(err => console.error(err));
+      } else { 
+       return res.render("register",{
+            errors: validationErrors.mapped(),
+            old:req.body
+       })
         
-  },
+      }
+    },
     updateProduct: function(req, res) {
       const productID = req.params.id;
       const validationErrors = validationResult(req);
