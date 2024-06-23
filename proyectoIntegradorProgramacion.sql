@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 23-06-2024 a las 02:20:37
+-- Tiempo de generación: 23-06-2024 a las 21:33:04
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -106,7 +106,8 @@ INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombre_producto`, `descr
 (7, 2, 'bugatti.jpg', 'Bugatti Divo', 'El Bugatti Divo es una máquina de rendimiento diseñada para dominar las curvas y ofrecer una experiencia de conducción incomparable. Con su diseño aerodinámico y su potente motor, este superdeportivo impresionante ofrece un rendimiento excepcional en la pista y en la carretera. Cada detalle, desde su chasis ligero hasta su avanzado sistema de tracción integral, refleja la dedicación de Bugatti a la excelencia en la ingeniería automotriz.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (8, 3, 'porsche.jpg', 'Porsche 911 Turbo S', 'El Porsche 911 Turbo S es un icono del rendimiento y la tecnología de vanguardia. Con su diseño aerodinámico y su potente motor, este deportivo de alto rendimiento ofrece una experiencia de conducción emocionante y envolvente. Desde su lujoso interior hasta su impresionante rendimiento en carretera, el 911 Turbo S es una máquina impresionante en todos los sentidos.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (9, 4, 'aston.jpg', 'Aston Martin DB11', 'El Aston Martin DB11 es una combinación perfecta de estilo, rendimiento y artesanía británica. Con su elegante diseño exterior y su potente motor, este coupé de alta gama ofrece una experiencia de conducción emocionante y lujosa. Cada detalle, desde sus líneas aerodinámicas hasta su interior meticulosamente diseñado, refleja la pasión de Aston Martin por la excelencia en la ingeniería automotriz.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
-(10, 5, 'lexus.jpeg', 'Lexus LC 500', 'El Lexus LC 500 es un gran turismo de lujo que cautiva con su diseño cautivador y su rendimiento emocionante. Con su distintivo estilo exterior y su interior lujosamente equipado, este vehículo ofrece una experiencia de conducción incomparable. Desde su potente motor hasta sus avanzadas características de seguridad y entretenimiento, el LC 500 es la combinación perfecta de lujo y deportividad.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL);
+(10, 5, 'lexus.jpeg', 'Lexus LC 500', 'El Lexus LC 500 es un gran turismo de lujo que cautiva con su diseño cautivador y su rendimiento emocionante. Con su distintivo estilo exterior y su interior lujosamente equipado, este vehículo ofrece una experiencia de conducción incomparable. Desde su potente motor hasta sus avanzadas características de seguridad y entretenimiento, el LC 500 es la combinación perfecta de lujo y deportividad.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
+(12, 6, 'https://cdn.motor1.com/images/mgl/ZbA8Z/s1/critica-hyundai-veloster-n.webp', ' Hyundai Veloster 3.5 ', 'Este auto es muy raro y rápido!', '2024-06-23 02:22:19', '2024-06-23 21:09:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -132,12 +133,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `username`, `email`, `password`, `fecha`, `dni`, `foto`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'juanperez', 'juan.perez@example.com', 'contraseña123', '1990-05-15', 12345678, 'ruta/foto1.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(2, 'ana.garcia', 'ana.garcia@example.com', 'secreto456', '1985-10-28', 87654321, 'ruta/foto2.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(3, 'carlitos123', 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'ruta/foto3.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(4, 'laura_mart', 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'ruta/foto4.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'ruta/foto5.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(6, 'probandox', 'prueba@gmail.com', '$2a$10$bQNoilNKJOO1LbubNuUI7elwjJW.k1TxqhqRidy1rFlDaEL9GM2AG', '1985-12-12', 22875834, 'imagen.jpg', '2024-06-20 15:32:34', '2024-06-21 20:09:10', NULL);
+(1, 'juanperez', 'juan.perez@example.com', 'contraseña123', '1990-05-15', 12345678, 'https://assets.goal.com/images/v3/blt3959cad0aaf9e1b0/twitter_F3l7Vq4WYAIOMHb_(1).jpg?auto=webp&format=pjpg&width=3840&quality=60', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(2, 'ana.garcia', 'ana.garcia@example.com', 'secreto456', '1985-10-28', 87654321, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPDJWGPImGuwJmegd13hnWhRSMVf3p7AKlPw&s', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(3, 'carlitos123', 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/59fa9a11-52a8-4d79-806f-b3ceaf8d21ca.jpeg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(4, 'laura_mart', 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'https://cdn.britannica.com/74/234474-050-A8FA4BB2/Serena-Williams-womens-single-trophy-Australian-Open-Januray-28-2017.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'https://img.olympics.com/images/image/private/t_1-1_300/f_auto/v1707814715/primary/rfokftspfqn6yomtoisa', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
+(6, 'probando2005', 'prueba@gmail.com', '$2a$10$bQNoilNKJOO1LbubNuUI7elwjJW.k1TxqhqRidy1rFlDaEL9GM2AG', '1985-12-12', 22875834, 'https://pbs.twimg.com/profile_images/1654731397934792704/0ZQkljp8_400x400.jpg', '2024-06-20 15:32:34', '2024-06-23 21:29:24', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -178,7 +179,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

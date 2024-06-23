@@ -94,6 +94,7 @@ const controller = {
           username: data.username,
           fecha: data.fecha,
           dni: data.dni,
+          foto: data.foto
       };
       if (data.password) {
           // En un entorno real, deberías cifrar la contraseña antes de guardarla

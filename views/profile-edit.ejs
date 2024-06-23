@@ -38,7 +38,12 @@
 					<input type="number" id="dni" name="dni" 
 					<% if (usuario.dni) {%>
 						value="<%=usuario.dni%>" <%}%> ><br><br>
-				
+
+					<label for="foto">Foto de perfil (URL):</label>
+					<input type="text" id="foto" name="foto"><br><br>
+					<% if (locals.errors && errors.foto) { %>
+						<p class="feedback"><%= errors.foto.msg %></p>
+					<% } %>
 					<input type="submit" value="Enviar">
 				</form>
 				</h2>
