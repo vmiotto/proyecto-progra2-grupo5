@@ -62,7 +62,7 @@ const controller = {
       comentario.create(nuevocomentario)
       .then(function (nuevocomentario) {
         console.log("Comentario creado correctamente:", nuevocomentario);
-        return res.redirect(`/product/${productId}`);
+        return res.redirect(`/${productId}/comment`);
       })
       .catch(function (err) {
           console.log("Error al guardar el comentario", err);
