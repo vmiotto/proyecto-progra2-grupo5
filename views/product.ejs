@@ -48,9 +48,12 @@
                             <form class="form" action="/product/<%=producto.id%>" method="POST">
                                 <input class="form-input" name="comentario" type="text" placeholder="Agregar comentario">
                                 <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                                <% if (locals.errors && errors.comentario) { %>
+                                    <p class="feedback"><%= errors.comentario.msg %></p>
+                                <% } %>  
                             </form>
                         <% } else { %>
-                            <form>
+                            <form class="form" action="/users/login">
                                 <button type="submit" class="buy-now-button">Debes estar logueado para comentar</button>
                             </form>
                         <% } %>
@@ -71,6 +74,4 @@
             </div>
         </div>
     
-
-
 <%- include('partials/footer.ejs') %>

@@ -45,24 +45,22 @@ const controller = {
     res.render('product', {})
   },
   addcomment: function(req,res){
+      const validationErrors = validationResult(req)
       const comment = req.body.comentario;
       const productId = req.params.id;
       const userId = req.session.user.id;
 
-      console.log('esta es la info del comentario', req.body)
-
-      if (comentario.length < 3) {
-        return res.status(400).send({ error: 'El comentario debe tener al menos 3 caracteres.' });
-      }
+      if(!validationErrors.isEmpty()){
+        return res.render("product",{
+          errors: validationErrors.mapped()
+        })
+      } else{
       const nuevocomentario = {
         comentario: comment,
         usuario_id: userId,
         producto_id: productId,
-        created_at: new Date()
       };
-      console.log(nuevocomentario)
-      db.Comentario
-      .create(nuevocomentario)
+      comentario.create(nuevocomentario)
       .then(function (nuevocomentario) {
         console.log("Comentario creado correctamente:", nuevocomentario);
         return res.redirect(`/product/${productId}`);
@@ -71,6 +69,7 @@ const controller = {
           console.log("Error al guardar el comentario", err);
           return res.status(500).send("Error al guardar el comentario en la base de datos.");
       });
+    }
     },
     editProduct: function(req, res) {
       const productID = req.params.id

@@ -40,7 +40,7 @@
 						value="<%=usuario.dni%>" <%}%> ><br><br>
 
 					<label for="foto">Foto de perfil (URL):</label>
-					<input type="text" id="foto" name="foto"><br><br>
+					<input type="text" id="foto" name="foto" value="<%=usuario.foto%>"><br><br>
 					<% if (locals.errors && errors.foto) { %>
 						<p class="feedback"><%= errors.foto.msg %></p>
 					<% } %>

@@ -39,10 +39,10 @@ const controller = {
           old: data })
       }
       const producto = {
-          imagen: data.imagen,
-          nombre_producto: data.nombre_producto,
-          descripcion: data.descripcion,
-          usuario_id: req.session.user.id,
+        imagen: data.imagen,
+        nombre_producto: data.nombre_producto,
+        descripcion: data.descripcion,
+        usuario_id: req.session.user.id,
       }
       
       db.Producto.create(producto)
