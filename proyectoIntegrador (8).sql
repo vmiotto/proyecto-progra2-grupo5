@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 24-06-2024 a las 17:12:30
+-- Tiempo de generación: 24-06-2024 a las 18:10:32
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -80,12 +80,13 @@ INSERT INTO `comentarios` (`comentario`, `producto_id`, `usuario_id`, `id`, `upd
 ('Comprenme este auto por favor.', 16, 6, 34, '2024-06-24 15:38:19', '2024-06-24 15:38:19', NULL),
 ('Cual es el precio de este auto?', 16, 7, 35, '2024-06-24 15:40:58', '2024-06-24 15:40:58', NULL),
 ('Estoy interesado en comparlo.', 16, 7, 36, '2024-06-24 15:41:44', '2024-06-24 15:41:44', NULL),
-('...', 17, 7, 37, '2024-06-24 15:43:36', '2024-06-24 15:43:36', NULL),
-('...', 17, 7, 38, '2024-06-24 15:44:30', '2024-06-24 15:44:30', NULL),
-('...', 17, 7, 39, '2024-06-24 15:44:31', '2024-06-24 15:44:31', NULL),
-('...', 17, 7, 40, '2024-06-24 15:44:33', '2024-06-24 15:44:33', NULL),
-('...', 17, 7, 41, '2024-06-24 15:44:35', '2024-06-24 15:44:35', NULL),
-('asdf', 17, 7, 42, '2024-06-24 15:44:37', '2024-06-24 15:44:37', NULL);
+('Quien me lo compra?', 15, 6, 43, '2024-06-24 17:56:55', '2024-06-24 17:56:55', NULL),
+('Este es mi auto favorito.', 12, 6, 44, '2024-06-24 18:04:07', '2024-06-24 18:04:07', NULL),
+('Leo, a cuanto me lo vendes?', 12, 8, 45, '2024-06-24 18:08:10', '2024-06-24 18:08:10', NULL),
+('Extraño la MSN.', 16, 8, 46, '2024-06-24 18:08:29', '2024-06-24 18:08:29', NULL),
+('Yo no Leo, sory, si queres te presto plata igual.', 15, 8, 47, '2024-06-24 18:08:49', '2024-06-24 18:08:49', NULL),
+('Va muy rapido este auto?', 3, 8, 48, '2024-06-24 18:09:03', '2024-06-24 18:09:03', NULL),
+('Si me lo regalas te regalo entradas.', 9, 8, 49, '2024-06-24 18:09:15', '2024-06-24 18:09:15', NULL);
 
 -- --------------------------------------------------------
 
@@ -121,9 +122,8 @@ INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombre_producto`, `descr
 (10, 5, 'lexus.jpeg', 'Lexus LC 500', 'El Lexus LC 500 es un gran turismo de lujo que cautiva con su diseño cautivador y su rendimiento emocionante. Con su distintivo estilo exterior y su interior lujosamente equipado, este vehículo ofrece una experiencia de conducción incomparable. Desde su potente motor hasta sus avanzadas características de seguridad y entretenimiento, el LC 500 es la combinación perfecta de lujo y deportividad.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (12, 6, 'https://cdn.motor1.com/images/mgl/ZbA8Z/s1/critica-hyundai-veloster-n.webp', '   Hyundai Veloster 7.3   ', 'Este auto es muy raro y rápido!', '2024-06-23 02:22:19', '2024-06-23 22:32:41', NULL),
 (14, 6, 'https://media.cdn.puntobiz.com.ar/012024/1706194059324.webp?cw=984&ch=553&extw=jpg', '    Peugeot 208 1.6', 'Este carro mantiene confort, lujo y seguridad. Además, el auto es muy barato.', '2024-06-23 22:33:31', '2024-06-24 03:30:40', NULL),
-(15, 6, 'https://hips.hearstapps.com/hmg-prod/images/a225002-large-1664874213.jpg?crop=0.5623618566466688xw:1xh;center,top&resize=1200:*', ' Audi TT 2.5', 'Auto lujoso, rápido y moderno.', '2024-06-24 03:04:00', '2024-06-24 17:00:34', NULL),
-(16, 6, 'https://www.motorwebargentina.com/wp-content/uploads/2020/04/Audi-A3-Sedan-2021-1.jpg', 'Audi A3', 'El mejor Audi para tu familia! Este auto es cómodo y muy lujoso.', '2024-06-24 15:36:57', '2024-06-24 15:36:57', NULL),
-(17, 7, 'foto', 'product', 'desc', '2024-06-24 15:43:12', '2024-06-24 15:43:12', NULL);
+(15, 6, 'https://hips.hearstapps.com/hmg-prod/images/a225002-large-1664874213.jpg?crop=0.5623618566466688xw:1xh;center,top&resize=1200:*', '  Audi TT ', 'Auto lujoso, rápido y moderno.', '2024-06-24 03:04:00', '2024-06-24 17:23:19', NULL),
+(16, 6, 'https://www.motorwebargentina.com/wp-content/uploads/2020/04/Audi-A3-Sedan-2021-1.jpg', 'Audi A3', 'El mejor Audi para tu familia! Este auto es cómodo y muy lujoso.', '2024-06-24 15:36:57', '2024-06-24 15:36:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -155,7 +155,8 @@ INSERT INTO `usuarios` (`id`, `username`, `email`, `password`, `fecha`, `dni`, `
 (4, 'laura_mart', 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'https://cdn.britannica.com/74/234474-050-A8FA4BB2/Serena-Williams-womens-single-trophy-Australian-Open-Januray-28-2017.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'https://img.olympics.com/images/image/private/t_1-1_300/f_auto/v1707814715/primary/rfokftspfqn6yomtoisa', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (6, 'AndresLeardoMessi', 'prueba@gmail.com', '$2a$10$bQNoilNKJOO1LbubNuUI7elwjJW.k1TxqhqRidy1rFlDaEL9GM2AG', '1987-06-24', 22875834, 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSoedPP9xMhUd0P1mvbzjsD5M7P2HMfqn5dDdZ_oRPfurfx-P9TyYbw7NmaWhwNGCVztLroiPxX9-JRNPc', '2024-06-20 15:32:34', '2024-06-24 04:08:27', NULL),
-(7, 'lisandroSuarez', 'luchito@hotmail.com', '$2a$10$tIQdV4EBQ7ANa7YbqWzLNuQbvE59Yqm/h4EYsgcxUU7a4UaJ3JBdS', '1979-07-21', 23858734, 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT4pd9ANDuRzvI3dH_S-FP5dGfLGOSkiMEXW3M2H530lahqiyVrJyElEfTX-80evMdLI6oSr1cjenv3IgE', '2024-06-24 15:40:15', '2024-06-24 15:40:15', NULL);
+(7, 'lisandroSuarez', 'luchito@hotmail.com', '$2a$10$61do38GETVslU36/7fgC/O6JIYPT3.TFHF218F9h.enbVTB4iedsm', '1979-07-21', 23858734, 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcT4pd9ANDuRzvI3dH_S-FP5dGfLGOSkiMEXW3M2H530lahqiyVrJyElEfTX-80evMdLI6oSr1cjenv3IgE', '2024-06-24 15:40:15', '2024-06-24 17:58:39', NULL),
+(8, 'neyllunior', 'neymo@yahoo.br', '$2a$10$zV8E2Kz86OS1XB.BIvJd0OwSMmfkqhQ0helFIgtsqtn/CJOpRxAs2', '1992-02-05', 12156374, 'https://static.tycsports.com/sites/default/files/nota_periodistica/neysantos0408.jpg', '2024-06-24 18:07:47', '2024-06-24 18:07:47', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -190,7 +191,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -202,7 +203,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
