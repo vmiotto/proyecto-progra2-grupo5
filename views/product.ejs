@@ -64,11 +64,13 @@
                             <% } %>
                         </form>
                         <br>
-                        <form action="/product/delete/<%= producto.id %>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este producto?');">
-                            <% if (producto.usuario_id == locals.user.id) { %>
+                        <% if (producto.usuario_id == locals.user.id) { %>
+
+                        <form action="/product/delete/<%= producto.id %>" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este producto?')">
                                 <button type="submit" >ELIMINAR PRODUCTO</button>
-                            <% } %>
                         </form>
+                        <% } %>
+
                         <% } %>
                 </div>
             </div>

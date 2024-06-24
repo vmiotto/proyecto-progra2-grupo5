@@ -50,9 +50,23 @@ const controller = {
       const productId = req.params.id;
       const userId = req.session.user.id;
       if(!validationErrors.isEmpty()){
-        return res.render("product",{
-          errors: validationErrors.mapped()
-        })
+        producto.findByPk(productId, {
+          include: [
+              { association: 'usuarios' },
+              { association: 'comentarios', include: [{ association: 'usuarios' }] }
+          ]
+      })
+      .then(function(productoData) {
+          return res.render("product", {
+              producto: productoData,
+              errors: validationErrors.mapped(),
+              locals: req.locals
+          });
+      })
+      .catch(function (error) {
+          console.log("Error: ", error);
+          return res.status(500).send("Error");
+      });
       } else{
       const nuevocomentario = {
         comentario: comment,
@@ -126,6 +140,10 @@ const controller = {
   },
   borrar: function(req, res){
     const productId = req.params.id
+    const userId = req.session.user ? req.session.user.id : null;
+    if (!userId) {
+        return res.redirect('/users/login');
+    }
     producto.destroy(
       { where: { id: productId }}
     )

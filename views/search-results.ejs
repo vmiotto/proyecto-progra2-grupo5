@@ -1,5 +1,8 @@
-<%- include('./partials/header.ejs') %>
-	<%if (datos.length === 0){ %>
+<% if (locals.user != undefined) { %>
+	<%- include('./partials/headerlogueado.ejs')%>
+<% } else { %>
+	<%- include('./partials/header.ejs')%>
+<% } %>	<%if (datos.length === 0){ %>
 		<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
