@@ -20,7 +20,9 @@
 						</a>		
 						<%}}%>
 					</h1>
-					<a class="btn mt-3 ml-4" href="profile">SEGUIR</a>
+					<% if(locals.user.id != usuario.id){ %>
+					<a class="btn mt-3 ml-4" >SEGUIR</a>
+					<% } %>
 				</div>
 	
 				<div>
