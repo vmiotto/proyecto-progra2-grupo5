@@ -9,9 +9,11 @@ const controller = {
           [op.or]: [
             { nombre_producto: { [op.like]: '%' + infoABuscar + '%' } },
             { descripcion: { [op.like]: '%' + infoABuscar + '%' } }
-          ]
-        },
-        include: [{ association: 'comentarios'}, {association: 'usuarios'}]
+          ]},
+        include: [{ association: 'comentarios'}, {association: 'usuarios'}],
+        order: [
+          ['created_at', 'DESC'] 
+         ]
       })
       .then(function(data){
         console.log("buscador: ", JSON.stringify(data,null, 4))

@@ -49,7 +49,6 @@ const controller = {
       const comment = req.body.comentario;
       const productId = req.params.id;
       const userId = req.session.user.id;
-
       if(!validationErrors.isEmpty()){
         return res.render("product",{
           errors: validationErrors.mapped()

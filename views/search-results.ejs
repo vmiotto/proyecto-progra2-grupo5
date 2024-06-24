@@ -12,12 +12,16 @@
 			<div class="col-12">
 				<h2 class="products-title">Tus resultados para: "<%= busqueda %>"</h2>
 			</div>
-			<% for (let i = 0; i < 1; i++) { %>
+			<% for (let i = 0; i < datos.length; i++) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/product/<%= datos[i].id %>">
 							<figure class="product-box_image">
+								<% if(new Date(datos[i].createdAt) > new Date('2024-06-21')){ %>
+								<img src= " <%=datos[i].imagen %>" alt="<%=datos[i].nombre_producto%>">
+								<% }else{ %>
 								<img src= " ../imagenes/<%=datos[i].imagen %>" alt="<%=datos[i].nombre_producto%>">
+								<% } %>
 							</figure>
 							<article class="product-box_data">
 								<h2><%= datos[i].nombre_producto %></h2>
@@ -30,30 +34,7 @@
 				</div>
 			<% } %>
 			
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Novedades</h2>
-					</div>
-					<!-- Show the "ultimos" products -->
-					<% for (let i = 1; i < datos.length; i++) { %>
-						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="/product/<%=datos[i].id%>">
-									<figure class="product-box_image">
-										<img src= "../imagenes/<%=datos[i].imagen%>" alt="<%=datos[i].nombre_producto%>">
-									</figure>
-									<article class="product-box_data">
-										<h2><%= datos[i].nombre_producto %></h2>
-										<p><%= datos[i].descripcion %></p>
-										<p>Comentarios: <%= datos[i].comentarios.length %></p>
-										<p><a href="./profile/<%=datos[i].usuario_id%>"> Publicado por <%=datos[i].usuarios.username%></a></p>
-									</article>
-								</a>
-							</section>
-						</div>
-					<% } %>
-		
+			
 			<!-- /Novedades -->
 			<!-- Más comentados -->
 			<div class="container products-wrapper">
@@ -68,8 +49,11 @@
 							<section class="product-box">
 								<a href="/product/<%= datos[i].id %>">
 									<figure class="product-box_image">
-										<img src= "../imagenes/<%=datos[i].imagen%>" alt="<%=datos[i].nombre_producto%>">
-									</figure>
+										<% if(new Date(datos[i].createdAt) > new Date('2024-06-21')){ %>
+											<img src= " <%=datos[i].imagen %>" alt="<%=datos[i].nombre_producto%>">
+											<% }else{ %>
+											<img src= " ../imagenes/<%=datos[i].imagen %>" alt="<%=datos[i].nombre_producto%>">
+											<% } %>									</figure>
 									<article class="product-box_data">
 										<h2><%= datos[i].nombre_producto %></h2>
 										<p><%= datos[i].descripcion %></p>
