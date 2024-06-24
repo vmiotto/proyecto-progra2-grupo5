@@ -60,7 +60,6 @@ const controller = {
           return res.render("product", {
               producto: productoData,
               errors: validationErrors.mapped(),
-              locals: req.locals
           });
       })
       .catch(function (error) {
@@ -132,7 +131,6 @@ const controller = {
 
       db.Producto.update(updates, { where: { id: productID } })
           .then(function() {
-            req.session.user= updates
             return res.redirect(`/product/${productID}`);
           })
           .catch(err => console.error(err));
