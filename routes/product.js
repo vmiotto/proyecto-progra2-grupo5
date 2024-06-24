@@ -9,7 +9,7 @@ const addCommentValidation = require("../middlewares/add-comment")
 
 router.get("/", productoController.index)
 router.get("/:id", productoController.id)
-router.post('/product/:id',addCommentValidation, productoController.addcomment);
+router.post('/:id',addCommentValidation, productoController.addcomment);
 router.get("/edit/:id", productoController.editProduct);
 router.post("/edit/:id", prodAddValidation, productoController.updateProduct);
 router.post("/delete/:id", productoController.borrar)

@@ -14,6 +14,7 @@ const controller = {
       }
       usuario.findByPk(id, filtrado)
       .then (function(data){
+        console.log('usuario a mostrar', data)
         res.render("profile", { usuario: data });
       })
       .catch(function(error){
@@ -103,8 +104,16 @@ const controller = {
 
       db.Usuario.update(updates, { where: { id: userId } })
           .then(function() {
-            req.session.user= updates
-            return res.redirect(`/profile/${userId}`);
+            req.session.user= {...req.session.user, ...updates }
+            db.Usuario.findByPk(userId)
+            .then(usuario => {
+              if (!usuario) {
+                  return res.redirect('/');
+              }
+             return res.redirect(`/profile/${usuario.id}`);
+      })
+      .catch(err => console.error(err));
+            
           })
           .catch(err => console.error(err));
           }
