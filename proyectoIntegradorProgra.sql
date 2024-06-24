@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 23-06-2024 a las 22:15:12
+-- Tiempo de generación: 24-06-2024 a las 04:03:34
 -- Versión del servidor: 5.7.39
 -- Versión de PHP: 7.4.33
 
@@ -107,8 +107,9 @@ INSERT INTO `productos` (`id`, `usuario_id`, `imagen`, `nombre_producto`, `descr
 (8, 3, 'porsche.jpg', 'Porsche 911 Turbo S', 'El Porsche 911 Turbo S es un icono del rendimiento y la tecnología de vanguardia. Con su diseño aerodinámico y su potente motor, este deportivo de alto rendimiento ofrece una experiencia de conducción emocionante y envolvente. Desde su lujoso interior hasta su impresionante rendimiento en carretera, el 911 Turbo S es una máquina impresionante en todos los sentidos.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (9, 4, 'aston.jpg', 'Aston Martin DB11', 'El Aston Martin DB11 es una combinación perfecta de estilo, rendimiento y artesanía británica. Con su elegante diseño exterior y su potente motor, este coupé de alta gama ofrece una experiencia de conducción emocionante y lujosa. Cada detalle, desde sus líneas aerodinámicas hasta su interior meticulosamente diseñado, refleja la pasión de Aston Martin por la excelencia en la ingeniería automotriz.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
 (10, 5, 'lexus.jpeg', 'Lexus LC 500', 'El Lexus LC 500 es un gran turismo de lujo que cautiva con su diseño cautivador y su rendimiento emocionante. Con su distintivo estilo exterior y su interior lujosamente equipado, este vehículo ofrece una experiencia de conducción incomparable. Desde su potente motor hasta sus avanzadas características de seguridad y entretenimiento, el LC 500 es la combinación perfecta de lujo y deportividad.', '2024-04-18 14:26:50', '2024-04-18 14:26:50', NULL),
-(12, 6, 'https://cdn.motor1.com/images/mgl/ZbA8Z/s1/critica-hyundai-veloster-n.webp', '  Hyundai Veloster 2.5  ', 'Este auto es muy raro y rápido!', '2024-06-23 02:22:19', '2024-06-23 21:43:50', NULL),
-(13, 6, 'https://fotos.perfil.com/2023/02/13/volkswagen-gol-1508369.jpg', ' Volkswagen Gol 3.5', 'Bueno, bonito y barato.', '2024-06-23 21:40:41', '2024-06-23 21:48:20', NULL);
+(12, 6, 'https://cdn.motor1.com/images/mgl/ZbA8Z/s1/critica-hyundai-veloster-n.webp', '   Hyundai Veloster 7.3   ', 'Este auto es muy raro y rápido!', '2024-06-23 02:22:19', '2024-06-23 22:32:41', NULL),
+(14, 6, 'https://media.cdn.puntobiz.com.ar/012024/1706194059324.webp?cw=984&ch=553&extw=jpg', '    Peugeot 208 1.6', 'Este carro mantiene confort, lujo y seguridad. Además, el auto es muy barato.', '2024-06-23 22:33:31', '2024-06-24 03:30:40', NULL),
+(15, 6, 'https://hips.hearstapps.com/hmg-prod/images/a225002-large-1664874213.jpg?crop=0.5623618566466688xw:1xh;center,top&resize=1200:*', 'Audi TT', 'Auto lujoso, rápido y moderno.', '2024-06-24 03:04:00', '2024-06-24 03:04:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -139,7 +140,7 @@ INSERT INTO `usuarios` (`id`, `username`, `email`, `password`, `fecha`, `dni`, `
 (3, 'carlitos123', 'carlos.lopez@example.com', 'qwerty789', '1978-03-22', 56781234, 'https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/59fa9a11-52a8-4d79-806f-b3ceaf8d21ca.jpeg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (4, 'laura_mart', 'laura.martinez@example.com', 'clave4321', '1995-07-11', 43218765, 'https://cdn.britannica.com/74/234474-050-A8FA4BB2/Serena-Williams-womens-single-trophy-Australian-Open-Januray-28-2017.jpg', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
 (5, 'robbie.sanchez', 'roberto.sanchez@example.com', '123456abc', '1982-12-03', 98765432, 'https://img.olympics.com/images/image/private/t_1-1_300/f_auto/v1707814715/primary/rfokftspfqn6yomtoisa', '2024-04-18 14:04:07', '2024-04-18 14:04:07', NULL),
-(6, 'probando2005', 'prueba@gmail.com', '$2a$10$bQNoilNKJOO1LbubNuUI7elwjJW.k1TxqhqRidy1rFlDaEL9GM2AG', '1985-12-12', 22875834, 'https://pbs.twimg.com/profile_images/1654731397934792704/0ZQkljp8_400x400.jpg', '2024-06-20 15:32:34', '2024-06-23 21:29:24', NULL);
+(6, 'AndresLeitoMessi', 'prueba@gmail.com', '$2a$10$bQNoilNKJOO1LbubNuUI7elwjJW.k1TxqhqRidy1rFlDaEL9GM2AG', '1987-06-24', 22875834, 'https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSoedPP9xMhUd0P1mvbzjsD5M7P2HMfqn5dDdZ_oRPfurfx-P9TyYbw7NmaWhwNGCVztLroiPxX9-JRNPc', '2024-06-20 15:32:34', '2024-06-24 03:18:48', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -180,7 +181,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
